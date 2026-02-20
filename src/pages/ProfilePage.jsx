@@ -82,24 +82,24 @@ export default function ProfilePage() {
       <main className="flex-1 overflow-y-auto no-scrollbar pb-28 pt-6">
         {/* Points Card */}
         <section className="px-6 -mt-6 relative z-10">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-bl-full -mr-8 -mt-8 opacity-50" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-smac-gold/10 rounded-tr-full -ml-6 -mb-6 opacity-30" />
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-xl border border-slate-100 dark:border-transparent relative overflow-hidden transition-colors">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 dark:bg-primary/20 rounded-bl-full -mr-8 -mt-8 opacity-50" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-smac-gold/5 dark:bg-smac-gold/10 rounded-tr-full -ml-6 -mb-6 opacity-30" />
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
+                  <p className="text-slate-400 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
                     Current Points
                   </p>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold text-white tracking-tight">
+                    <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       8,500
                     </span>
                     <span className="text-smac-gold font-bold">PTS</span>
                   </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md p-2 rounded-lg">
-                  <Icon name="contactless" className="text-white" />
+                <div className="bg-slate-50 dark:bg-white/10 backdrop-blur-md p-2 rounded-lg border border-slate-100 dark:border-white/10">
+                  <Icon name="contactless" className="text-slate-900 dark:text-white" />
                 </div>
               </div>
               <div className="flex gap-3">
@@ -109,7 +109,7 @@ export default function ProfilePage() {
                 >
                   Manage Points
                 </Link>
-                <button className="px-4 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-all border border-white/10">
+                <button className="px-4 bg-slate-50 dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/20 text-slate-600 dark:text-white rounded-xl transition-all border border-slate-200 dark:border-white/10">
                   <Icon name="qr_code_2" className="block" />
                 </button>
               </div>

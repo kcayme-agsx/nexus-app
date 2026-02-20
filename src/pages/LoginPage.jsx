@@ -41,12 +41,6 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-white px-6 pt-12 pb-8 flex flex-col max-w-md mx-auto">
-      <div className="mb-6">
-        <button onClick={() => navigate(-1)} className="p-2 -ml-2 text-gray-700 hover:bg-gray-100 rounded-full transition-all">
-          <span className="material-symbols-outlined text-[24px]">chevron_left</span>
-        </button>
-      </div>
-
       <div className="flex flex-col items-center mb-10 text-center">
         <div className="w-16 h-16 bg-[#007AFF] rounded-full flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20">
           <span className="material-symbols-outlined text-white text-[32px]">local_mall</span>

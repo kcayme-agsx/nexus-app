@@ -13,7 +13,7 @@ export default function MapPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleStoreClick = (storeId) => {
-    const store = stores.find(s => s.id === storeId);
+    const store = stores.find((s) => s.id === storeId);
     if (store) {
       setSelectedStore(store);
       setIsModalOpen(true);
@@ -65,14 +65,20 @@ export default function MapPage() {
               <span className="font-medium text-slate-500 dark:text-slate-400">Samsung</span>
             </div>
             {/* Food Court */}
-            <div className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-colors hover:border-slate-300 dark:hover:border-slate-600">
+            <div
+              onClick={() => handleStoreClick("food court")}
+              className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors"
+            >
               <div className="flex flex-col items-center gap-1">
                 <Icon name="restaurant" className="text-slate-400 dark:text-slate-500" />
                 <span className="font-medium text-slate-500 dark:text-slate-400">Food Court</span>
               </div>
             </div>
             {/* Cinema */}
-            <div className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-colors hover:border-slate-300 dark:hover:border-slate-600">
+            <div
+              onClick={() => handleStoreClick("cinema")}
+              className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors"
+            >
               <div className="flex flex-col items-center gap-1">
                 <Icon name="movie" className="text-slate-400 dark:text-slate-500" />
                 <span className="font-medium text-slate-500 dark:text-slate-400">Cinema</span>
@@ -98,7 +104,11 @@ export default function MapPage() {
             </div>
 
             {/* Path Line */}
-            <svg className="pointer-events-none absolute inset-0 z-10" width="800" height="800">
+            <svg
+              className="pointer-events-none absolute inset-0 z-10"
+              width="800"
+              height="800"
+            >
               <path
                 d="M 402 400 L 402 250 L 200 250 L 200 200"
                 fill="none"
@@ -116,7 +126,10 @@ export default function MapPage() {
         <div className="absolute left-0 right-0 top-0 z-30 bg-linear-to-b from-slate-100/90 dark:from-background-dark/90 to-transparent px-4 pb-2 pt-4">
           <div className="flex items-center gap-3">
             <div className="flex h-12 flex-1 items-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 px-4 shadow-lg backdrop-blur-md">
-              <Icon name="search" className="mr-2 text-slate-500 dark:text-slate-400" />
+              <Icon
+                name="search"
+                className="mr-2 text-slate-500 dark:text-slate-400"
+              />
               <input
                 type="text"
                 placeholder="Search stores, dining, or facilities..."
@@ -177,7 +190,10 @@ export default function MapPage() {
       {/* Bottom Navigation */}
       <div className="z-50 border-t border-slate-200 dark:border-surface-highlight bg-white dark:bg-[#182634] px-4 pb-6 pt-2">
         <div className="mx-auto flex max-w-md items-center justify-between">
-          <Link to="/home" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link
+            to="/home"
+            className="group flex flex-1 flex-col items-center justify-center gap-1"
+          >
             <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="home" />
             </div>
@@ -185,7 +201,10 @@ export default function MapPage() {
               Home
             </p>
           </Link>
-          <Link to="/map" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link
+            to="/map"
+            className="group flex flex-1 flex-col items-center justify-center gap-1"
+          >
             <div className="relative flex h-8 items-center justify-center text-primary">
               <Icon name="map" filled />
               <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full border-2 border-white dark:border-[#182634] bg-red-500" />
@@ -194,7 +213,10 @@ export default function MapPage() {
               Map
             </p>
           </Link>
-          <Link to="/promos" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link
+            to="/promos"
+            className="group flex flex-1 flex-col items-center justify-center gap-1"
+          >
             <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="local_offer" />
             </div>
@@ -202,7 +224,10 @@ export default function MapPage() {
               Promos
             </p>
           </Link>
-          <Link to="/profile" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link
+            to="/profile"
+            className="group flex flex-1 flex-col items-center justify-center gap-1"
+          >
             <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="person" />
             </div>

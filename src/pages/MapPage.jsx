@@ -6,11 +6,115 @@ import StoreDetailsModal from "../components/StoreDetailsModal";
 import { stores } from "../data/stores";
 
 const floors = ["5", "4", "3", "2", "G"];
-const activeFloor = "3";
+
+const floorLayouts = {
+  G: {
+    label: "Ground Floor",
+    hallways: [
+      { left: 100, top: 220, width: 550, height: 120 },
+      { left: 300, top: 340, width: 100, height: 200 },
+      { left: 100, top: 540, width: 550, height: 80 },
+    ],
+    stores: [
+      { id: "guest-services", name: "Guest Services", left: 100, top: 60, width: 250, height: 150, highlighted: true, icon: "info" },
+      { id: "starbucks", name: "Starbucks", left: 360, top: 60, width: 170, height: 150 },
+      { id: "watsons", name: "Watsons", left: 540, top: 60, width: 160, height: 150 },
+      { id: "bpi", name: "BPI", left: 100, top: 630, width: 240, height: 130, icon: "account_balance" },
+      { id: "parking", name: "Parking", left: 410, top: 630, width: 240, height: 130, icon: "local_parking" },
+    ],
+    pois: [
+      { icon: "atm", left: 460, top: 400 },
+      { icon: "info", left: 340, top: 400 },
+      { icon: "escalator", left: 170, top: 400 },
+    ],
+  },
+  2: {
+    label: "Fashion Hall",
+    hallways: [
+      { left: 100, top: 200, width: 600, height: 80 },
+      { left: 100, top: 280, width: 80, height: 230 },
+      { left: 100, top: 510, width: 600, height: 80 },
+      { left: 620, top: 280, width: 80, height: 230 },
+    ],
+    stores: [
+      { id: "hm", name: "H&M", left: 100, top: 60, width: 220, height: 130, highlighted: true },
+      { id: "zara", name: "Zara", left: 330, top: 60, width: 180, height: 130 },
+      { id: "nike", name: "Nike", left: 520, top: 60, width: 180, height: 130 },
+      { id: "forever21", name: "Forever 21", left: 190, top: 300, width: 160, height: 200 },
+      { id: "cotton-on", name: "Cotton On", left: 450, top: 300, width: 160, height: 200 },
+    ],
+    pois: [
+      { icon: "wc", left: 370, top: 370 },
+      { icon: "escalator", left: 660, top: 370 },
+    ],
+  },
+  3: {
+    label: "Main Wing",
+    hallways: [
+      { left: 100, top: 200, width: 600, height: 100 },
+      { left: 350, top: 300, width: 100, height: 300 },
+      { left: 100, top: 500, width: 600, height: 100 },
+    ],
+    stores: [
+      { id: "uniqlo", name: "UNIQLO", left: 100, top: 60, width: 200, height: 130, highlighted: true, serif: true },
+      { id: "hm", name: "H&M", left: 310, top: 60, width: 180, height: 130 },
+      { id: "samsung", name: "Samsung", left: 500, top: 60, width: 150, height: 130 },
+      { id: "food court", name: "Food Court", left: 100, top: 610, width: 340, height: 140, icon: "restaurant" },
+      { id: "cinema", name: "Cinema", left: 450, top: 610, width: 200, height: 140, icon: "movie" },
+    ],
+    pois: [
+      { icon: "wc", left: 460, top: 320 },
+      { icon: "elevator", left: 310, top: 320 },
+    ],
+    userLocation: { left: 390, top: 400 },
+    path: "M 402 400 L 402 250 L 200 250 L 200 200",
+    pathEnd: { cx: 200, cy: 200 },
+  },
+  4: {
+    label: "Cyberzone",
+    hallways: [
+      { left: 100, top: 180, width: 550, height: 80 },
+      { left: 300, top: 260, width: 100, height: 280 },
+      { left: 100, top: 540, width: 550, height: 80 },
+    ],
+    stores: [
+      { id: "samsung", name: "Samsung", left: 100, top: 50, width: 190, height: 120 },
+      { id: "apple", name: "Apple", left: 300, top: 50, width: 200, height: 120, highlighted: true },
+      { id: "sony", name: "Sony", left: 510, top: 50, width: 140, height: 120 },
+      { id: "miniso", name: "Miniso", left: 100, top: 630, width: 220, height: 130 },
+      { id: "power-mac", name: "Power Mac", left: 430, top: 630, width: 220, height: 130 },
+    ],
+    pois: [
+      { icon: "elevator", left: 340, top: 380 },
+      { icon: "wc", left: 200, top: 380 },
+    ],
+  },
+  5: {
+    label: "Entertainment",
+    hallways: [
+      { left: 150, top: 240, width: 500, height: 100 },
+      { left: 350, top: 340, width: 100, height: 200 },
+      { left: 150, top: 540, width: 500, height: 80 },
+    ],
+    stores: [
+      { id: "timezone", name: "Timezone", left: 100, top: 50, width: 260, height: 180, highlighted: true, icon: "sports_esports" },
+      { id: "fitness-first", name: "Fitness First", left: 380, top: 50, width: 270, height: 180, icon: "fitness_center" },
+      { id: "national-bookstore", name: "National Bookstore", left: 100, top: 630, width: 280, height: 130, icon: "menu_book" },
+      { id: "spa", name: "Spa & Wellness", left: 400, top: 630, width: 250, height: 130, icon: "spa" },
+    ],
+    pois: [
+      { icon: "emergency", left: 500, top: 400 },
+      { icon: "wc", left: 200, top: 400 },
+    ],
+  },
+};
 
 export default function MapPage() {
+  const [activeFloor, setActiveFloor] = useState("3");
   const [selectedStore, setSelectedStore] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const layout = floorLayouts[activeFloor];
 
   const handleStoreClick = (storeId) => {
     const store = stores.find((s) => s.id === storeId);
@@ -37,88 +141,96 @@ export default function MapPage() {
           {/* Map Container */}
           <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2">
             {/* Hallways */}
-            <div className="absolute left-[100px] top-[200px] h-[100px] w-[600px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
-            <div className="absolute left-[350px] top-[300px] h-[300px] w-[100px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
-            <div className="absolute left-[100px] top-[500px] h-[100px] w-[600px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
+            {layout.hallways.map((h, i) => (
+              <div
+                key={`h-${i}`}
+                className="absolute rounded-lg bg-slate-200 dark:bg-[#2a3642]"
+                style={{ left: h.left, top: h.top, width: h.width, height: h.height }}
+              />
+            ))}
 
-            {/* Uniqlo (Active) */}
-            <div
-              onClick={() => handleStoreClick('uniqlo')}
-              className="absolute left-[100px] top-[60px] flex h-[130px] w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-primary/10 dark:bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.15)] dark:shadow-[0_0_20px_rgba(13,127,242,0.3)] transition-all hover:bg-primary/15 dark:hover:bg-[#2c3e4f] hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <span className="text-lg font-semibold tracking-wide text-primary dark:text-white font-serif italic">
-                UNIQLO
-              </span>
-            </div>
-            {/* H&M */}
-            <div
-              onClick={() => handleStoreClick('hm')}
-              className="absolute left-[310px] top-[60px] flex h-[130px] w-[180px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-all hover:border-slate-300 dark:hover:border-slate-600 hover:scale-[1.02]"
-            >
-              <span className="font-medium text-slate-500 dark:text-slate-400">H&M</span>
-            </div>
-            {/* Samsung */}
-            <div
-              onClick={() => handleStoreClick('samsung')}
-              className="absolute left-[500px] top-[60px] flex h-[130px] w-[150px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-all hover:border-slate-300 dark:hover:border-slate-600 hover:scale-[1.02]"
-            >
-              <span className="font-medium text-slate-500 dark:text-slate-400">Samsung</span>
-            </div>
-            {/* Food Court */}
-            <div
-              onClick={() => handleStoreClick("food court")}
-              className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors"
-            >
-              <div className="flex flex-col items-center gap-1">
-                <Icon name="restaurant" className="text-slate-400 dark:text-slate-500" />
-                <span className="font-medium text-slate-500 dark:text-slate-400">Food Court</span>
+            {/* Stores */}
+            {layout.stores.map((store) => (
+              <div
+                key={store.id}
+                onClick={() => handleStoreClick(store.id)}
+                className={`absolute flex cursor-pointer items-center justify-center rounded-lg transition-all hover:scale-[1.02] active:scale-[0.98] ${
+                  store.highlighted
+                    ? "border-2 border-primary bg-primary/10 dark:bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.15)] dark:shadow-[0_0_20px_rgba(13,127,242,0.3)] hover:bg-primary/15 dark:hover:bg-[#2c3e4f]"
+                    : store.icon
+                      ? "border border-transparent bg-white/60 dark:bg-surface-dark"
+                      : "border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none hover:border-slate-300 dark:hover:border-slate-600"
+                }`}
+                style={{ left: store.left, top: store.top, width: store.width, height: store.height }}
+              >
+                {store.icon ? (
+                  <div className="flex flex-col items-center gap-1">
+                    <Icon
+                      name={store.icon}
+                      className={store.highlighted ? "text-primary dark:text-white" : "text-slate-400 dark:text-slate-500"}
+                    />
+                    <span className={`text-sm font-medium ${store.highlighted ? "text-primary dark:text-white" : "text-slate-500 dark:text-slate-400"}`}>
+                      {store.name}
+                    </span>
+                  </div>
+                ) : (
+                  <span
+                    className={`font-medium ${
+                      store.highlighted
+                        ? `text-lg tracking-wide text-primary dark:text-white font-semibold ${store.serif ? "font-serif italic" : ""}`
+                        : "text-slate-500 dark:text-slate-400"
+                    }`}
+                  >
+                    {store.name}
+                  </span>
+                )}
               </div>
-            </div>
-            {/* Cinema */}
-            <div
-              onClick={() => handleStoreClick("cinema")}
-              className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors"
-            >
-              <div className="flex flex-col items-center gap-1">
-                <Icon name="movie" className="text-slate-400 dark:text-slate-500" />
-                <span className="font-medium text-slate-500 dark:text-slate-400">Cinema</span>
-              </div>
-            </div>
+            ))}
 
             {/* POI Icons */}
-            <div className="absolute left-[460px] top-[320px] flex flex-col items-center gap-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-[#2a3642] text-slate-500 dark:text-slate-400">
-                <Icon name="wc" className="text-[18px]" />
+            {layout.pois.map((poi, i) => (
+              <div
+                key={`poi-${i}`}
+                className="absolute flex flex-col items-center gap-1"
+                style={{ left: poi.left, top: poi.top }}
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-[#2a3642] text-slate-500 dark:text-slate-400">
+                  <Icon name={poi.icon} className="text-[18px]" />
+                </div>
               </div>
-            </div>
-            <div className="absolute left-[310px] top-[320px] flex flex-col items-center gap-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-[#2a3642] text-slate-500 dark:text-slate-400">
-                <Icon name="elevator" className="text-[18px]" />
-              </div>
-            </div>
+            ))}
 
             {/* User Location */}
-            <div className="absolute left-[390px] top-[400px] z-20 flex h-6 w-6 items-center justify-center">
-              <div className="pulse-ring" />
-              <div className="relative z-10 h-3 w-3 rounded-full border-2 border-white bg-primary shadow-[0_0_10px_#0d7ff2]" />
-            </div>
+            {layout.userLocation && (
+              <div
+                className="absolute z-20 flex h-6 w-6 items-center justify-center"
+                style={{ left: layout.userLocation.left, top: layout.userLocation.top }}
+              >
+                <div className="pulse-ring" />
+                <div className="relative z-10 h-3 w-3 rounded-full border-2 border-white bg-primary shadow-[0_0_10px_#0d7ff2]" />
+              </div>
+            )}
 
             {/* Path Line */}
-            <svg
-              className="pointer-events-none absolute inset-0 z-10"
-              width="800"
-              height="800"
-            >
-              <path
-                d="M 402 400 L 402 250 L 200 250 L 200 200"
-                fill="none"
-                stroke="#0d7ff2"
-                strokeWidth="3"
-                strokeDasharray="6 4"
-                strokeLinecap="round"
-              />
-              <circle cx="200" cy="200" r="4" fill="#0d7ff2" />
-            </svg>
+            {layout.path && (
+              <svg
+                className="pointer-events-none absolute inset-0 z-10"
+                width="800"
+                height="800"
+              >
+                <path
+                  d={layout.path}
+                  fill="none"
+                  stroke="#0d7ff2"
+                  strokeWidth="3"
+                  strokeDasharray="6 4"
+                  strokeLinecap="round"
+                />
+                {layout.pathEnd && (
+                  <circle cx={layout.pathEnd.cx} cy={layout.pathEnd.cy} r="4" fill="#0d7ff2" />
+                )}
+              </svg>
+            )}
           </div>
         </div>
 
@@ -152,6 +264,7 @@ export default function MapPage() {
             {floors.map((floor) => (
               <button
                 key={floor}
+                onClick={() => setActiveFloor(floor)}
                 className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-colors ${
                   floor === activeFloor
                     ? "bg-primary text-white shadow-md shadow-blue-500/30"
@@ -161,6 +274,16 @@ export default function MapPage() {
                 {floor}
               </button>
             ))}
+          </div>
+        </div>
+
+        {/* Floor Label */}
+        <div className="absolute bottom-28 left-4 z-30">
+          <div className="rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/80 dark:bg-[#22303c]/80 px-4 py-2 shadow-lg backdrop-blur-md">
+            <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+              {activeFloor === "G" ? "Ground Floor" : `Level ${activeFloor}`}
+            </p>
+            <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">{layout.label}</p>
           </div>
         </div>
 

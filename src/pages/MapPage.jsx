@@ -1,11 +1,25 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
 import ThemeToggle from "../components/ThemeToggle";
+import StoreDetailsModal from "../components/StoreDetailsModal";
+import { stores } from "../data/stores";
 
 const floors = ["5", "4", "3", "2", "G"];
 const activeFloor = "3";
 
 export default function MapPage() {
+  const [selectedStore, setSelectedStore] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleStoreClick = (storeId) => {
+    const store = stores.find(s => s.id === storeId);
+    if (store) {
+      setSelectedStore(store);
+      setIsModalOpen(true);
+    }
+  };
+
   return (
     <div className="flex h-dvh flex-col overflow-hidden bg-background-dark text-slate-100">
       {/* Map Area */}
@@ -28,28 +42,37 @@ export default function MapPage() {
             <div className="absolute left-[100px] top-[500px] h-[100px] w-[600px] rounded-lg bg-[#2a3642]" />
 
             {/* Uniqlo (Active) */}
-            <div className="absolute left-[100px] top-[60px] flex h-[130px] w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.3)] transition-colors hover:bg-[#2c3e4f]">
-              <span className="text-lg font-semibold tracking-wide text-white">
+            <div
+              onClick={() => handleStoreClick('uniqlo')}
+              className="absolute left-[100px] top-[60px] flex h-[130px] w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.3)] transition-all hover:bg-[#2c3e4f] hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <span className="text-lg font-semibold tracking-wide text-white font-serif italic">
                 UNIQLO
               </span>
             </div>
             {/* H&M */}
-            <div className="absolute left-[310px] top-[60px] flex h-[130px] w-[180px] items-center justify-center rounded-lg border border-transparent bg-[#1e2936] transition-colors hover:border-slate-600">
+            <div
+              onClick={() => handleStoreClick('hm')}
+              className="absolute left-[310px] top-[60px] flex h-[130px] w-[180px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-all hover:border-slate-600 hover:scale-[1.02]"
+            >
               <span className="font-medium text-slate-400">H&M</span>
             </div>
             {/* Samsung */}
-            <div className="absolute left-[500px] top-[60px] flex h-[130px] w-[150px] items-center justify-center rounded-lg border border-transparent bg-[#1e2936] transition-colors hover:border-slate-600">
+            <div
+              onClick={() => handleStoreClick('samsung')}
+              className="absolute left-[500px] top-[60px] flex h-[130px] w-[150px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-all hover:border-slate-600 hover:scale-[1.02]"
+            >
               <span className="font-medium text-slate-400">Samsung</span>
             </div>
             {/* Food Court */}
-            <div className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-[#1e2936] transition-colors hover:border-slate-600">
+            <div className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors">
               <div className="flex flex-col items-center gap-1">
                 <Icon name="restaurant" className="text-slate-500" />
                 <span className="font-medium text-slate-400">Food Court</span>
               </div>
             </div>
             {/* Cinema */}
-            <div className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-[#1e2936] transition-colors hover:border-slate-600">
+            <div className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors">
               <div className="flex flex-col items-center gap-1">
                 <Icon name="movie" className="text-slate-500" />
                 <span className="font-medium text-slate-400">Cinema</span>
@@ -90,7 +113,7 @@ export default function MapPage() {
         </div>
 
         {/* Search Bar */}
-        <div className="absolute left-0 right-0 top-0 z-30 bg-gradient-to-b from-background-dark/90 to-transparent px-4 pb-2 pt-4">
+        <div className="absolute left-0 right-0 top-0 z-30 bg-linear-to-b from-background-dark/90 to-transparent px-4 pb-2 pt-4">
           <div className="flex items-center gap-3">
             <div className="flex h-12 flex-1 items-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 px-4 shadow-lg backdrop-blur-md">
               <Icon name="search" className="mr-2 text-slate-500 dark:text-slate-400" />
@@ -129,7 +152,7 @@ export default function MapPage() {
         </div>
 
         {/* Map Controls */}
-        <div className="absolute bottom-56 right-4 z-30 flex flex-col gap-3">
+        <div className="absolute bottom-28 right-4 z-30 flex flex-col gap-3">
           <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-700/50 bg-[#22303c]/90 text-primary shadow-lg backdrop-blur-md transition-colors hover:bg-slate-700/50">
             <Icon name="my_location" />
           </button>
@@ -142,70 +165,23 @@ export default function MapPage() {
             </button>
           </div>
         </div>
-
-        {/* Store Info Card */}
-        <div className="absolute bottom-4 left-4 right-4 z-40">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-[#1e2936] p-5 shadow-2xl">
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
-            <div className="flex items-start justify-between">
-              <div className="flex gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-1">
-                  <span className="text-center text-xs font-bold leading-tight text-red-600">
-                    UNI
-                    <br />
-                    QLO
-                  </span>
-                </div>
-                <div>
-                  <h2 className="text-xl font-bold leading-tight text-slate-900 dark:text-white">
-                    Uniqlo
-                  </h2>
-                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                    Level 3, Mega Fashion Hall
-                  </p>
-                  <div className="mt-2 flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="text-xs font-medium text-green-400">
-                      Open
-                    </span>
-                    <span className="text-xs text-slate-500">&bull;</span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400">
-                      Closes at 10:00 PM
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <button className="p-1 text-slate-400 hover:text-slate-900 dark:hover:text-white">
-                <Icon name="close" />
-              </button>
-            </div>
-            <div className="mt-5 flex gap-3">
-              <Link
-                to="/navigation"
-                className="flex h-11 flex-1 items-center justify-center gap-2 rounded-full bg-primary font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
-              >
-                <Icon name="directions" className="text-[20px]" />
-                Get Directions
-              </Link>
-              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white">
-                <Icon name="share" className="text-[20px]" />
-              </button>
-              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white">
-                <Icon name="favorite" className="text-[20px]" />
-              </button>
-            </div>
-          </div>
-        </div>
       </main>
 
+      {/* Store Details Modal */}
+      <StoreDetailsModal
+        store={selectedStore}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+
       {/* Bottom Navigation */}
-      <div className="z-50 border-t border-slate-200 dark:border-[#223649] bg-white dark:bg-[#182634] px-4 pb-6 pt-2">
+      <div className="z-50 border-t border-slate-200 dark:border-surface-highlight bg-white dark:bg-[#182634] px-4 pb-6 pt-2">
         <div className="mx-auto flex max-w-md items-center justify-between">
           <Link to="/home" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="home" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               Home
             </p>
           </Link>
@@ -219,18 +195,18 @@ export default function MapPage() {
             </p>
           </Link>
           <Link to="/promos" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="local_offer" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               Promos
             </p>
           </Link>
           <Link to="/profile" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="person" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
               Profile
             </p>
           </Link>

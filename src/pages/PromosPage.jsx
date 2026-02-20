@@ -1,11 +1,15 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
 import ThemeToggle from "../components/ThemeToggle";
+import StoreDetailsModal from "../components/StoreDetailsModal";
+import { stores } from "../data/stores";
 
 const filters = ["All Deals", "Fashion", "Food & Dining", "Tech", "Entertainment"];
 
-const promos = [
+const promosData = [
   {
+    storeId: 'hm',
     brand: "H&M",
     brandBg: "bg-red-600",
     location: "Fashion Hall \u2022 L2",
@@ -20,6 +24,7 @@ const promos = [
     favorited: true,
   },
   {
+    storeId: 'dtf',
     brand: "DTF",
     brandBg: "bg-slate-800",
     location: "Mega Fashion Hall \u2022 L1",
@@ -32,25 +37,20 @@ const promos = [
     validUntil: "Sept 05, 2023",
     favorited: false,
   },
-  {
-    brand: null,
-    brandIcon: "laptop_mac",
-    brandBg: "bg-black",
-    brandName: "Power Mac Center",
-    location: "Cyberzone \u2022 L4",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCr1I-Em6YzSV6ntLdt2OsKtnH08UVHGWivu_FBA7h5Q2TouZ9Czzr6xa7wTfOxa3WZ0Dy9UPh9djpG8OhxJP1pifTKko78KsbcLm1zliVtft9zPFObay1TM7_-Zv9UbQWHGBe2zB8dwZK5D5CZkPIZuOpFludN05TReyf3LEZ00yVb-RBvj1JC7MAJ0bMycA8QGZlcO-4aeKVxKG6tp4UNjxmlccaohLQz3abGhwbnSBJ3ILOMV5z0yYL4eCdRW70WsbHdcgzSKUDR",
-    badge: "Exclusive",
-    badgeStyle: "bg-primary text-white",
-    title: "Student Discount: 10% OFF on iPads",
-    description:
-      "Back to school special! Present your valid student ID to avail the discount on selected iPad models.",
-    validUntil: "Sept 15, 2023",
-    favorited: false,
-  },
 ];
 
 export default function PromosPage() {
+  const [selectedStore, setSelectedStore] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleStoreClick = (storeId) => {
+    const store = stores.find(s => s.id === storeId);
+    if (store) {
+      setSelectedStore(store);
+      setIsModalOpen(true);
+    }
+  };
+
   return (
     <div className="flex min-h-dvh flex-col overflow-x-hidden bg-white dark:bg-background-dark text-slate-900 dark:text-slate-100">
       {/* Header */}
@@ -95,28 +95,27 @@ export default function PromosPage() {
 
       {/* Promo Feed */}
       <main className="flex-1 space-y-6 px-4 py-6 pb-24">
-        {promos.map((promo) => (
+        {promosData.map((promo) => (
           <article
             key={promo.title}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark shadow-sm transition-all hover:shadow-md"
+            className="group relative flex flex-col overflow-hidden rounded-4xl border border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark shadow-sm transition-all hover:shadow-md"
           >
             {/* Card Header */}
             <div className="flex items-center justify-between p-4 pb-3">
-              <div className="flex items-center gap-3">
+              <div
+                onClick={() => handleStoreClick(promo.storeId)}
+                className="flex cursor-pointer items-center gap-3 active:scale-[0.98] transition-transform"
+              >
                 <div
                   className={`flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200 dark:border-surface-highlight text-white ${promo.brandBg}`}
                 >
-                  {promo.brandIcon ? (
-                    <Icon name={promo.brandIcon} className="text-sm" />
-                  ) : (
-                    <span className="text-xs font-bold">
-                      {promo.brand}
-                    </span>
-                  )}
+                  <span className="text-xs font-bold">
+                    {promo.brand}
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-sm font-bold leading-tight text-slate-900 dark:text-white">
-                    {promo.brandName || promo.brand}
+                    {promo.brand}
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-text-secondary">
                     {promo.location}
@@ -133,7 +132,7 @@ export default function PromosPage() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-surface-highlight">
+            <div className="relative aspect-4/3 w-full overflow-hidden bg-slate-100 dark:bg-surface-highlight">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url('${promo.image}')` }}
@@ -177,6 +176,13 @@ export default function PromosPage() {
           <p className="text-sm font-medium">You've reached the end of the list</p>
         </div>
       </main>
+
+      {/* Store Details Modal */}
+      <StoreDetailsModal
+        store={selectedStore}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-50 w-full max-w-[390px] border-t border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark px-6 pb-6 pt-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">

@@ -190,7 +190,7 @@ export default function HomePage() {
       {/* Floating AI Button */}
       <Link
         to="/chat"
-        className="group absolute bottom-24 right-6 z-20 flex items-center gap-2 rounded-full bg-primary p-4 text-white shadow-xl shadow-primary/40 transition-transform hover:scale-105 hover:bg-primary/90 active:scale-95"
+        className="group fixed bottom-24 right-6 z-20 flex items-center gap-2 rounded-full bg-primary p-4 text-white shadow-xl shadow-primary/40 transition-transform hover:scale-105 hover:bg-primary/90 active:scale-95"
       >
         <Icon
           name="smart_toy"

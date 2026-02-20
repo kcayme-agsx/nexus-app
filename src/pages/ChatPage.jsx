@@ -17,7 +17,7 @@ export default function ChatPage() {
       {/* Header */}
       <header className="flex flex-none items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-[#15202b] px-4 py-3 backdrop-blur-md">
         <Link
-          to="/"
+          to="/home"
           className="flex items-center justify-center rounded-full p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           <Icon name="arrow_back" />
@@ -67,15 +67,16 @@ export default function ChatPage() {
         {/* Quick Actions Grid */}
         <div className="grid w-full max-w-sm grid-cols-2 gap-2 pl-11">
           {quickActions.map((action) => (
-            <button
+            <Link
               key={action.label}
+              to="/home"
               className="group flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-[#1e2a38] px-4 py-2.5 transition-all hover:bg-slate-200 dark:hover:bg-[#253344]"
             >
               <Icon name={action.icon} className="text-[20px] text-primary" />
               <span className="text-xs font-medium text-slate-700 dark:text-slate-200">
                 {action.label}
               </span>
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -144,9 +145,9 @@ export default function ChatPage() {
       {/* Input Area */}
       <footer className="flex-none border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-[#15202b] p-4 pb-8 backdrop-blur-md">
         <div className="relative mx-auto flex max-w-4xl items-center gap-2">
-          <button className="flex-shrink-0 rounded-full p-3 text-slate-500 dark:text-slate-400 transition-colors hover:bg-primary/10 hover:text-primary">
+          <Link to="/home" className="flex-shrink-0 rounded-full p-3 text-slate-500 dark:text-slate-400 transition-colors hover:bg-primary/10 hover:text-primary">
             <Icon name="add_circle" />
-          </button>
+          </Link>
           <div className="relative flex-1">
             <input
               type="text"

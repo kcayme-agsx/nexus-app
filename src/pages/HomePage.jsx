@@ -146,7 +146,7 @@ export default function HomePage() {
                   alt={deal.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute left-4 top-4 rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider">
                   <span className={deal.brandColor}>{deal.brand}</span>
                 </div>
@@ -201,7 +201,7 @@ export default function HomePage() {
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-30 flex w-full max-w-[390px] items-end justify-between border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 pb-6 pt-3 backdrop-blur-md">
-        <Link to="/" className="flex w-1/4 flex-col items-center gap-1 text-primary">
+        <Link to="/home" className="flex w-1/4 flex-col items-center gap-1 text-primary">
           <Icon name="home" filled />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
@@ -213,7 +213,7 @@ export default function HomePage() {
           <Icon name="storefront" />
           <span className="text-[10px] font-medium">Directory</span>
         </Link>
-        <Link to="/parking" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
+        <Link to="/profile" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="person" />
           <span className="text-[10px] font-medium">Account</span>
         </Link>

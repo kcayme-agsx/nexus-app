@@ -38,7 +38,7 @@ export default function ParkingPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 px-4 py-3 backdrop-blur-md">
         <Link
-          to="/"
+          to="/home"
           className="-ml-2 rounded-full p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           <Icon name="arrow_back" className="text-slate-900 dark:text-white" />
@@ -202,7 +202,7 @@ export default function ParkingPage() {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 w-full max-w-[390px] border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 pb-[env(safe-area-inset-bottom,20px)] pt-2">
         <div className="flex items-end justify-between pb-4">
-          <Link to="/" className="group flex flex-col items-center gap-1 text-slate-400 dark:text-slate-400 transition-colors hover:text-primary dark:hover:text-white">
+          <Link to="/home" className="group flex flex-col items-center gap-1 text-slate-400 dark:text-slate-400 transition-colors hover:text-primary dark:hover:text-white">
             <Icon name="home" className="text-[24px] transition-transform group-hover:-translate-y-1" />
             <span className="text-[10px] font-medium">Home</span>
           </Link>
@@ -220,7 +220,7 @@ export default function ParkingPage() {
             <Icon name="restaurant" className="text-[24px] transition-transform group-hover:-translate-y-1" />
             <span className="text-[10px] font-medium">Dining</span>
           </Link>
-          <Link to="/" className="group flex flex-col items-center gap-1 text-slate-400 dark:text-slate-400 transition-colors hover:text-primary dark:hover:text-white">
+          <Link to="/profile" className="group flex flex-col items-center gap-1 text-slate-400 dark:text-slate-400 transition-colors hover:text-primary dark:hover:text-white">
             <Icon name="person" className="text-[24px] transition-transform group-hover:-translate-y-1" />
             <span className="text-[10px] font-medium">Profile</span>
           </Link>

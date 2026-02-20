@@ -5,18 +5,32 @@ import MapPage from "./pages/MapPage";
 import ParkingPage from "./pages/ParkingPage";
 import PromosPage from "./pages/PromosPage";
 import NavigationPage from "./pages/NavigationPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ProfilePage from "./pages/ProfilePage";
+import AppSettingsPage from "./pages/AppSettingsPage";
+import { AuthProvider } from "./contexts/AuthContext";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/parking" element={<ParkingPage />} />
         <Route path="/promos" element={<PromosPage />} />
         <Route path="/navigation" element={<NavigationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/settings" element={<AppSettingsPage />} />
       </Routes>
     </BrowserRouter>
+  </AuthProvider>
   );
 }

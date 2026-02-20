@@ -181,7 +181,7 @@ export default function PromosPage() {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-50 w-full max-w-[390px] border-t border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark px-6 pb-6 pt-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
         <div className="flex items-end justify-between">
-          <Link to="/" className="group flex w-16 flex-col items-center gap-1">
+          <Link to="/home" className="group flex w-16 flex-col items-center gap-1">
             <Icon name="home" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
             <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Home</span>
           </Link>
@@ -199,7 +199,7 @@ export default function PromosPage() {
             <Icon name="confirmation_number" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
             <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Tickets</span>
           </Link>
-          <Link to="/" className="group flex w-16 flex-col items-center gap-1">
+          <Link to="/profile" className="group flex w-16 flex-col items-center gap-1">
             <Icon name="person" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
             <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Profile</span>
           </Link>

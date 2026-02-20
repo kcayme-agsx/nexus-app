@@ -201,7 +201,7 @@ export default function MapPage() {
       {/* Bottom Navigation */}
       <div className="z-50 border-t border-slate-200 dark:border-[#223649] bg-white dark:bg-[#182634] px-4 pb-6 pt-2">
         <div className="mx-auto flex max-w-md items-center justify-between">
-          <Link to="/" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link to="/home" className="group flex flex-1 flex-col items-center justify-center gap-1">
             <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="home" />
             </div>
@@ -226,7 +226,7 @@ export default function MapPage() {
               Promos
             </p>
           </Link>
-          <Link to="/" className="group flex flex-1 flex-col items-center justify-center gap-1">
+          <Link to="/profile" className="group flex flex-1 flex-col items-center justify-center gap-1">
             <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="person" />
             </div>

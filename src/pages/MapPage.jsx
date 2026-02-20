@@ -21,15 +21,15 @@ export default function MapPage() {
   };
 
   return (
-    <div className="flex h-dvh flex-col overflow-hidden bg-background-dark text-slate-100">
+    <div className="flex h-dvh flex-col overflow-hidden bg-white dark:bg-background-dark text-slate-900 dark:text-slate-100">
       {/* Map Area */}
-      <main className="relative w-full flex-1 overflow-hidden bg-[#1a2632]">
+      <main className="relative w-full flex-1 overflow-hidden bg-slate-100 dark:bg-[#1a2632]">
         {/* Map Background */}
-        <div className="absolute inset-0 h-full w-full overflow-hidden bg-[#111820]">
+        <div className="absolute inset-0 h-full w-full overflow-hidden bg-slate-50 dark:bg-[#111820]">
           <div
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0 opacity-20 dark:opacity-10"
             style={{
-              backgroundImage: "radial-gradient(#4a5568 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(#94a3b8 1px, transparent 1px)",
               backgroundSize: "40px 40px",
             }}
           />
@@ -37,56 +37,56 @@ export default function MapPage() {
           {/* Map Container */}
           <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2">
             {/* Hallways */}
-            <div className="absolute left-[100px] top-[200px] h-[100px] w-[600px] rounded-lg bg-[#2a3642]" />
-            <div className="absolute left-[350px] top-[300px] h-[300px] w-[100px] rounded-lg bg-[#2a3642]" />
-            <div className="absolute left-[100px] top-[500px] h-[100px] w-[600px] rounded-lg bg-[#2a3642]" />
+            <div className="absolute left-[100px] top-[200px] h-[100px] w-[600px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
+            <div className="absolute left-[350px] top-[300px] h-[300px] w-[100px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
+            <div className="absolute left-[100px] top-[500px] h-[100px] w-[600px] rounded-lg bg-slate-200 dark:bg-[#2a3642]" />
 
             {/* Uniqlo (Active) */}
             <div
               onClick={() => handleStoreClick('uniqlo')}
-              className="absolute left-[100px] top-[60px] flex h-[130px] w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.3)] transition-all hover:bg-[#2c3e4f] hover:scale-[1.02] active:scale-[0.98]"
+              className="absolute left-[100px] top-[60px] flex h-[130px] w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary bg-primary/10 dark:bg-[#22303c] shadow-[0_0_20px_rgba(13,127,242,0.15)] dark:shadow-[0_0_20px_rgba(13,127,242,0.3)] transition-all hover:bg-primary/15 dark:hover:bg-[#2c3e4f] hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span className="text-lg font-semibold tracking-wide text-white font-serif italic">
+              <span className="text-lg font-semibold tracking-wide text-primary dark:text-white font-serif italic">
                 UNIQLO
               </span>
             </div>
             {/* H&M */}
             <div
               onClick={() => handleStoreClick('hm')}
-              className="absolute left-[310px] top-[60px] flex h-[130px] w-[180px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-all hover:border-slate-600 hover:scale-[1.02]"
+              className="absolute left-[310px] top-[60px] flex h-[130px] w-[180px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-all hover:border-slate-300 dark:hover:border-slate-600 hover:scale-[1.02]"
             >
-              <span className="font-medium text-slate-400">H&M</span>
+              <span className="font-medium text-slate-500 dark:text-slate-400">H&M</span>
             </div>
             {/* Samsung */}
             <div
               onClick={() => handleStoreClick('samsung')}
-              className="absolute left-[500px] top-[60px] flex h-[130px] w-[150px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-all hover:border-slate-600 hover:scale-[1.02]"
+              className="absolute left-[500px] top-[60px] flex h-[130px] w-[150px] cursor-pointer items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-all hover:border-slate-300 dark:hover:border-slate-600 hover:scale-[1.02]"
             >
-              <span className="font-medium text-slate-400">Samsung</span>
+              <span className="font-medium text-slate-500 dark:text-slate-400">Samsung</span>
             </div>
             {/* Food Court */}
-            <div className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors">
+            <div className="absolute left-[100px] top-[610px] flex h-[140px] w-[340px] items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-colors hover:border-slate-300 dark:hover:border-slate-600">
               <div className="flex flex-col items-center gap-1">
-                <Icon name="restaurant" className="text-slate-500" />
-                <span className="font-medium text-slate-400">Food Court</span>
+                <Icon name="restaurant" className="text-slate-400 dark:text-slate-500" />
+                <span className="font-medium text-slate-500 dark:text-slate-400">Food Court</span>
               </div>
             </div>
             {/* Cinema */}
-            <div className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-surface-dark transition-colors">
+            <div className="absolute left-[450px] top-[610px] flex h-[140px] w-[200px] items-center justify-center rounded-lg border border-transparent bg-white dark:bg-surface-dark shadow-sm dark:shadow-none transition-colors hover:border-slate-300 dark:hover:border-slate-600">
               <div className="flex flex-col items-center gap-1">
-                <Icon name="movie" className="text-slate-500" />
-                <span className="font-medium text-slate-400">Cinema</span>
+                <Icon name="movie" className="text-slate-400 dark:text-slate-500" />
+                <span className="font-medium text-slate-500 dark:text-slate-400">Cinema</span>
               </div>
             </div>
 
             {/* POI Icons */}
             <div className="absolute left-[460px] top-[320px] flex flex-col items-center gap-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2a3642] text-slate-400">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-[#2a3642] text-slate-500 dark:text-slate-400">
                 <Icon name="wc" className="text-[18px]" />
               </div>
             </div>
             <div className="absolute left-[310px] top-[320px] flex flex-col items-center gap-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2a3642] text-slate-400">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-[#2a3642] text-slate-500 dark:text-slate-400">
                 <Icon name="elevator" className="text-[18px]" />
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function MapPage() {
         </div>
 
         {/* Search Bar */}
-        <div className="absolute left-0 right-0 top-0 z-30 bg-linear-to-b from-background-dark/90 to-transparent px-4 pb-2 pt-4">
+        <div className="absolute left-0 right-0 top-0 z-30 bg-linear-to-b from-slate-100/90 dark:from-background-dark/90 to-transparent px-4 pb-2 pt-4">
           <div className="flex items-center gap-3">
             <div className="flex h-12 flex-1 items-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 px-4 shadow-lg backdrop-blur-md">
               <Icon name="search" className="mr-2 text-slate-500 dark:text-slate-400" />
@@ -153,14 +153,14 @@ export default function MapPage() {
 
         {/* Map Controls */}
         <div className="absolute bottom-28 right-4 z-30 flex flex-col gap-3">
-          <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-700/50 bg-[#22303c]/90 text-primary shadow-lg backdrop-blur-md transition-colors hover:bg-slate-700/50">
+          <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 text-primary shadow-lg backdrop-blur-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-700/50">
             <Icon name="my_location" />
           </button>
-          <div className="flex flex-col overflow-hidden rounded-full border border-slate-700/50 bg-[#22303c]/90 shadow-lg backdrop-blur-md">
-            <button className="flex h-12 w-12 items-center justify-center border-b border-slate-700/50 text-slate-200 transition-colors hover:bg-slate-700/50">
+          <div className="flex flex-col overflow-hidden rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 shadow-lg backdrop-blur-md">
+            <button className="flex h-12 w-12 items-center justify-center border-b border-slate-200 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700/50">
               <Icon name="add" />
             </button>
-            <button className="flex h-12 w-12 items-center justify-center text-slate-200 transition-colors hover:bg-slate-700/50">
+            <button className="flex h-12 w-12 items-center justify-center text-slate-700 dark:text-slate-200 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700/50">
               <Icon name="remove" />
             </button>
           </div>

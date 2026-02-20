@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SMAC Points Dashboard - Dark Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1e1e1e",
+                        "border-dark": "#2c2c2c",
+                        "gold": "#FFD700",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-slate-100 font-display min-h-screen flex flex-col antialiased selection:bg-primary/20">
+<div class="mx-auto w-full max-w-md bg-background-dark min-h-screen flex flex-col relative shadow-2xl overflow-hidden border-x border-border-dark">
+<header class="pt-14 pb-4 px-6 sticky top-0 z-20 bg-background-dark/90 backdrop-blur-md border-b border-border-dark">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-slate-200">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold text-white tracking-tight">SMAC Points</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-dark transition-colors border border-transparent hover:border-border-dark">
+<span class="material-symbols-outlined text-slate-200">history</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar space-y-6 pt-6 pb-24">
+<section class="px-6">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 p-6 border border-primary/30">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">wallet</span>
+</div>
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full border border-primary/20 uppercase tracking-widest">Active</span>
+</div>
+<p class="text-sm font-medium text-slate-400">Available Balance</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h2 class="text-4xl font-extrabold text-white tracking-tight">8,500</h2>
+<span class="text-lg font-bold text-primary">pts</span>
+</div>
+<p class="text-sm text-slate-400 mt-1 font-medium">≈ ₱850.00 Philippine Pesos</p>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-primary text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">qr_code_2</span>
+                            Use Points
+                        </button>
+<button class="flex-1 bg-surface-dark border border-border-dark text-white font-bold py-3 rounded-xl active:scale-95 transition-all text-sm">
+                            Transfer
+                        </button>
+</div>
+</div>
+</section>
+<section class="px-6">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-amber-900/20 border border-amber-900/40">
+<div class="bg-amber-500/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-amber-500 text-xl">warning</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-amber-200">1,200 pts expiring soon</p>
+<p class="text-xs text-amber-200/60">Expires on Mar 31, 2024</p>
+</div>
+<button class="text-xs font-bold text-amber-500 hover:underline">Redeem Now</button>
+</div>
+</section>
+<section class="px-6">
+<div class="p-6 rounded-2xl bg-surface-dark border border-border-dark">
+<h3 class="text-sm font-bold text-white mb-6">Points Activity (Last 30 Days)</h3>
+<div class="flex items-end justify-between h-32 gap-2 mb-4">
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group h-[40%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-dark border border-border-dark px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">+450</div>
+</div>
+<div class="flex-1 bg-red-500/20 rounded-t-lg relative group h-[20%]">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-dark border border-border-dark px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">-200</div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group h-[70%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group h-[55%]"></div>
+<div class="flex-1 bg-red-500/20 rounded-t-lg relative group h-[30%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group h-[90%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg relative group h-[45%]"></div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-border-dark">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary/60"></span>
+<span class="text-xs text-slate-400 font-medium">Earned (4,200)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500/40"></span>
+<span class="text-xs text-slate-400 font-medium">Redeemed (1,800)</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6">
+<div class="p-6 rounded-2xl bg-surface-dark border border-border-dark relative overflow-hidden">
+<div class="absolute -top-20 -right-20 w-40 h-40 bg-gold/10 blur-[80px]"></div>
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="text-[10px] font-bold text-gold uppercase tracking-widest mb-1">Current Tier</p>
+<h3 class="text-2xl font-black text-white flex items-center gap-2">
+                                Gold Member
+                                <span class="material-symbols-outlined text-gold filled text-xl">workspace_premium</span>
+</h3>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Next Tier</p>
+<p class="text-sm font-bold text-slate-300">Platinum</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-2.5 w-full bg-border-dark rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold to-yellow-600 rounded-full w-[72%]"></div>
+</div>
+<div class="flex justify-between items-center text-xs font-medium">
+<span class="text-slate-400">1,500 pts to Platinum</span>
+<span class="text-slate-300">72%</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-border-dark flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-dark bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-gold">local_cafe</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-dark bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-gold">local_parking</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-dark bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-gold">airplane_ticket</span>
+</div>
+</div>
+<button class="text-sm font-bold text-primary flex items-center gap-1">
+                            Tier Benefits
+                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<nav class="bg-background-dark border-t border-border-dark py-3 px-6 flex justify-between items-end fixed bottom-0 w-full max-w-md z-30 pb-6">
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary w-1/4" href="#">
+<span class="material-symbols-outlined filled">wallet</span>
+<span class="text-[10px] font-bold">SMAC</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Account</span>
+</a>
+</nav>
+</div>
+
+</body></html>

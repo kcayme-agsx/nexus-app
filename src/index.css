@@ -9,6 +9,8 @@
   --color-surface-dark: #1e2936;
   --color-surface-highlight: #223649;
   --color-text-secondary: #90adcb;
+  --color-gold: #D4AF37;
+  --color-smac-gold: #C5A059;
   --font-display: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -63,6 +65,11 @@ body {
   border-radius: 50%;
   animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
   background-color: rgba(13, 127, 242, 0.6);
+}
+
+/* SMAC Gold gradient for tier badges */
+.gold-gradient {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
 }
 
 /* Material Symbols filled variant */

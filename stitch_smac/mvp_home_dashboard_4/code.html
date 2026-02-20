@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SMAC Profile View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "smac-gold": "#C5A059",
+                        "background-light": "#F8FAFC",
+                        "surface-light": "#FFFFFF",
+                        "border-light": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { min-height: 100dvh; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-slate-900 font-display flex flex-col antialiased">
+<div class="mx-auto w-full max-w-md bg-background-light min-h-screen flex flex-col relative shadow-2xl overflow-hidden border-x border-border-light">
+<header class="pt-14 pb-8 px-6 bg-white border-b border-border-light">
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-md overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8b0qIPCwAhLh8W-APU6FohTxbBLkSytqJ2u-8wOGs50lGlb8V41vSBKnkaHgAfZzW4V1VtCtHl6pPoABmg9hwvJnlh0t91p0WAZDtbKDkBSLD-ik8AZ_M5WWoBiJBSZl2Azew69ONV7MzPPYcmHx4xFde-L-qlKYNWVW302o4jGbptoZWnJxcojgvc1an6Uo1EKGLyUUYNxXd_N-8spVAx9rchaLaN1lunk6unmy4sHYaEvBZZO6Fd9MdMoCikn9KA0jkZzGjNJL9"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-[16px] block">edit</span>
+</div>
+</div>
+<h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Alex Thompson</h1>
+<div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 bg-smac-gold/10 text-smac-gold border border-smac-gold/20 rounded-full text-xs font-bold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px] fill-1">workspace_premium</span>
+                    Verified SMAC Gold Member
+                </div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<section class="px-6 -mt-6">
+<div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-bl-full -mr-8 -mt-8 opacity-50"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-smac-gold/10 rounded-tr-full -ml-6 -mb-6 opacity-30"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Current Points</p>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-extrabold text-white tracking-tight">8,500</span>
+<span class="text-smac-gold font-bold">PTS</span>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">contactless</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-primary/20 text-sm">
+                                Manage Points
+                            </button>
+<button class="px-4 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-all border border-white/10">
+<span class="material-symbols-outlined block">qr_code_2</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 mt-8">
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-4 rounded-xl border border-border-light shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Balance</p>
+<p class="text-sm font-bold">₱2,450.00</p>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-border-light shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Vouchers</p>
+<p class="text-sm font-bold">12 Active</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 mt-8 space-y-2">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1 mb-3">Account Settings</h3>
+<a class="flex items-center justify-between p-4 bg-white rounded-xl border border-border-light hover:bg-slate-50 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">history</span>
+</div>
+<span class="font-semibold text-slate-700">Transaction History</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white rounded-xl border border-border-light hover:bg-slate-50 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="font-semibold text-slate-700">Linked Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white rounded-xl border border-border-light hover:bg-slate-50 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="font-semibold text-slate-700">App Settings</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white rounded-xl border border-border-light hover:bg-slate-50 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<span class="font-semibold text-slate-700">Privacy &amp; Security</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<button class="w-full mt-6 flex items-center justify-center gap-2 p-4 text-red-500 font-bold hover:bg-red-50 rounded-xl transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Sign Out
+                </button>
+</section>
+</main>
+<nav class="bg-white/80 backdrop-blur-xl border-t border-border-light py-3 px-6 flex justify-between items-end fixed bottom-0 w-full max-w-md z-30 pb-8">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[10px] font-medium">Directory</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary w-1/4" href="#">
+<span class="material-symbols-outlined fill-1">person</span>
+<span class="text-[10px] font-bold">Account</span>
+</a>
+</nav>
+</div>
+
+</body></html>

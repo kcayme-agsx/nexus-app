@@ -10,6 +10,8 @@ import RegisterPage from "./pages/RegisterPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ProfilePage from "./pages/ProfilePage";
 import AppSettingsPage from "./pages/AppSettingsPage";
+import LinkSmacPage from "./pages/LinkSmacPage";
+import SmacPointsPage from "./pages/SmacPointsPage";
 import { AuthProvider } from "./contexts/AuthContext";
 
 export default function App() {
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/settings" element={<AppSettingsPage />} />
+        <Route path="/link-smac" element={<LinkSmacPage />} />
+        <Route path="/smac-points" element={<SmacPointsPage />} />
       </Routes>
     </BrowserRouter>
   </AuthProvider>

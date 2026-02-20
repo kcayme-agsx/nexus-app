@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Link SM Advantage Card</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "smac-blue": "#003399",
+                        "background": "#ffffff",
+                        "surface": "#f8fafc"
+                    },
+                    fontFamily: {
+                        "sans": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem"
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 20px -1px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+<div class="mx-auto w-full max-w-md bg-white min-h-screen flex flex-col relative shadow-2xl overflow-hidden">
+<div class="h-12 w-full bg-white"></div>
+<header class="px-6 py-4 flex items-center">
+<button class="p-2 -ml-2 rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-slate-600">arrow_back_ios_new</span>
+</button>
+<div class="flex-1 text-center pr-8">
+<h1 class="text-sm font-bold uppercase tracking-widest text-slate-400">Step 2 of 3</h1>
+</div>
+</header>
+<main class="flex-1 px-8 pt-4 pb-12 flex flex-col">
+<div class="flex flex-col items-center mb-10">
+<div class="w-24 h-24 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center shadow-lg mb-6">
+<span class="text-white font-extrabold text-3xl tracking-tighter">SMAC</span>
+</div>
+<h2 class="text-2xl font-extrabold text-slate-900 text-center">Link Your SMAC</h2>
+<p class="text-slate-500 text-center mt-2 text-sm">Enter your 16-digit card number to start earning points with every purchase.</p>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase ml-1">Card Number</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">credit_card</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-slate-50 border-none ring-1 ring-slate-200 rounded-xl text-lg font-semibold tracking-widest placeholder:text-slate-300 focus:ring-2 focus:ring-primary focus:bg-white transition-all outline-none" maxlength="19" placeholder="6011 0000 0000 0000" type="text"/>
+</div>
+</div>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-slate-100"></div>
+<span class="flex-shrink mx-4 text-xs font-bold text-slate-400 uppercase">Or</span>
+<div class="flex-grow border-t border-slate-100"></div>
+</div>
+<button class="w-full flex items-center justify-center gap-3 py-4 border-2 border-dashed border-slate-200 rounded-xl text-slate-600 font-bold hover:bg-slate-50 hover:border-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                    Scan Card Barcode
+                </button>
+</div>
+<div class="mt-12 space-y-5 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+<h4 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Why link your card?</h4>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-bold text-sm text-slate-800">Track Points Balance</p>
+<p class="text-xs text-slate-500">Monitor your points and rewards in real-time.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+</div>
+<div>
+<p class="font-bold text-sm text-slate-800">Faster Checkout</p>
+<p class="text-xs text-slate-500">Just show your digital card to earn and pay.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+</div>
+<div>
+<p class="font-bold text-sm text-slate-800">Exclusive Offers</p>
+<p class="text-xs text-slate-500">Access members-only discounts and early sales.</p>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-10 flex flex-col gap-3">
+<button class="w-full bg-primary py-4 rounded-xl text-white font-bold text-lg shadow-lg shadow-primary/25 active:scale-[0.98] transition-all">
+                    Link Now
+                </button>
+<button class="w-full py-4 text-slate-400 font-bold text-sm hover:text-slate-600 transition-colors">
+                    Skip for Now
+                </button>
+</div>
+</main>
+<div class="flex justify-center pb-2 w-full">
+<div class="w-32 h-1.5 bg-slate-200 rounded-full"></div>
+</div>
+</div>
+
+</body></html>

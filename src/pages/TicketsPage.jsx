@@ -11,8 +11,7 @@ const myTicket = {
   time: "7:30 PM",
   seats: "H12, H13",
   ticketNo: "SM-2026-0220-1845",
-  poster:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuD5odBEPoYkHYL6ExkTarwAgXWhNZfJewjoGPmDJPBa1NxZNfmz-PE_AuETL63zo8uxU6Ju2Ihl9lR8nAz8RPWh2bfW600Z0HrLH5yAvY_C4H0ToNeJT9kk5mYkylLpGlGNeqFe1lNotxAL4zDyC-xrAQufyKfs4WVqiYPNeohHkW79k08ACkAAaFVgYuAclXK9iHrZWNudcrqG2-dzp3xm_b7XUG2C4eScNM_7xS6nM3M3-tUkZMr4zNKW1tFeXHNCTsxUgBIEDwnk",
+  poster: "https://image.tmdb.org/t/p/w780/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg",
 };
 
 const nowShowing = [
@@ -23,8 +22,7 @@ const nowShowing = [
     duration: "2h 45m",
     rating: "PG-13",
     times: ["1:00 PM", "4:15 PM", "7:30 PM", "10:00 PM"],
-    poster:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD5odBEPoYkHYL6ExkTarwAgXWhNZfJewjoGPmDJPBa1NxZNfmz-PE_AuETL63zo8uxU6Ju2Ihl9lR8nAz8RPWh2bfW600Z0HrLH5yAvY_C4H0ToNeJT9kk5mYkylLpGlGNeqFe1lNotxAL4zDyC-xrAQufyKfs4WVqiYPNeohHkW79k08ACkAAaFVgYuAclXK9iHrZWNudcrqG2-dzp3xm_b7XUG2C4eScNM_7xS6nM3M3-tUkZMr4zNKW1tFeXHNCTsxUgBIEDwnk",
+    poster: "https://image.tmdb.org/t/p/w780/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg",
   },
   {
     id: 2,
@@ -33,8 +31,7 @@ const nowShowing = [
     duration: "1h 50m",
     rating: "G",
     times: ["11:00 AM", "1:30 PM", "3:45 PM", "6:00 PM"],
-    poster:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDaNpGsMTpdSa_5osuorZp2znGAcf7To5K7ADGmsNMn5Tr9lU6A2JGRTNG5nA7ZA5Cv1lXdumLgnzkP-oC2vb1MeUkq8xk8YC28EIvp_G479SykLWTbRIJH5I6v4HIFWDfZ2Gz96cTkhH90h-wiZast_0AEbNPdshbysvx5oEh0fH8omQCGIoIixOXLZuX_GjatkYODdo1uHpcHA8Sp3x68qjgEGhSSm1XXv7oTcAe7S_yoZ1HnURI6y1hN3z_uBwaj8iAD9yRwJ8Op",
+    poster: "https://image.tmdb.org/t/p/w780/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
   },
   {
     id: 3,
@@ -43,8 +40,7 @@ const nowShowing = [
     duration: "2h 30m",
     rating: "PG-13",
     times: ["12:30 PM", "3:30 PM", "6:30 PM", "9:30 PM"],
-    poster:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAVtetHeswtkDBz2SaDAo10JL2_7wwR0fNVgLB8b0rJjDoOcVBZbQeLvTRfpSNgvvPkLpbNBkCnfwTbz_wyTgNDIC_I7WfHrLtgHE4Mz6YBPpk-gKUBXlHczDtWFNLJ9zVskg_a0L_evJvnFhS3OmpAFgUFv7F42wzMpfwd2BYw6fvR7xs_SvteXkD6f1kS9OKRUeMDC2Bn1gzq-4eHXwiIiFA43LgHnSsoZcvlW6wkFjyAjPEeRC71HO1ZnSDJaG9cjHMc-Puxz0Ie",
+    poster: "https://image.tmdb.org/t/p/w780/rvtdN5XkWAfGX6xDuPL6yYS2seK.jpg",
   },
 ];
 
@@ -177,8 +173,8 @@ export default function TicketsPage() {
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-4 rounded-2xl border border-slate-100 dark:border-surface-highlight bg-white dark:bg-surface-dark p-4 opacity-60">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-surface-highlight">
-                    <Icon name="movie" className="text-slate-400" />
+                  <div className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-surface-highlight">
+                    <img src="https://image.tmdb.org/t/p/w200/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg" alt="Avatar" className="h-full w-full object-cover" />
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-slate-900 dark:text-white">Avatar 4</p>
@@ -189,8 +185,8 @@ export default function TicketsPage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-4 rounded-2xl border border-slate-100 dark:border-surface-highlight bg-white dark:bg-surface-dark p-4 opacity-60">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-surface-highlight">
-                    <Icon name="movie" className="text-slate-400" />
+                  <div className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-surface-highlight">
+                    <img src="https://image.tmdb.org/t/p/w200/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="Spider-Man" className="h-full w-full object-cover" />
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-slate-900 dark:text-white">Spider-Man: Beyond</p>

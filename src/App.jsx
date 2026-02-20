@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ProfilePage from "./pages/ProfilePage";
+import TicketsPage from "./pages/TicketsPage";
 import AppSettingsPage from "./pages/AppSettingsPage";
 import LinkSmacPage from "./pages/LinkSmacPage";
 import SmacPointsPage from "./pages/SmacPointsPage";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/map" element={<MapPage />} />
         <Route path="/parking" element={<ParkingPage />} />
         <Route path="/promos" element={<PromosPage />} />
+        <Route path="/tickets" element={<TicketsPage />} />
         <Route path="/navigation" element={<NavigationPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

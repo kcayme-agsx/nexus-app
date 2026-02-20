@@ -125,8 +125,12 @@ const AppSettingsPage = () => {
           <span className="text-[10px] font-medium">Map</span>
         </button>
         <button className="flex flex-col items-center gap-1 text-gray-300">
-          <span className="material-symbols-outlined">explore</span>
-          <span className="text-[10px] font-medium">Directory</span>
+          <span className="material-symbols-outlined">local_offer</span>
+          <span className="text-[10px] font-medium">Promos</span>
+        </button>
+        <button onClick={() => navigate('/tickets')} className="flex flex-col items-center gap-1 text-gray-300">
+          <span className="material-symbols-outlined">confirmation_number</span>
+          <span className="text-[10px] font-medium">Tickets</span>
         </button>
         <button onClick={() => navigate('/profile')} className="flex flex-col items-center gap-1 text-blue-500">
           <span className="material-symbols-outlined">person</span>

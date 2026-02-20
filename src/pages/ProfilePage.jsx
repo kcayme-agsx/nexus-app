@@ -213,19 +213,23 @@ export default function ProfilePage() {
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-30 w-full max-w-[390px] border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/95 backdrop-blur-xl py-3 px-6 pb-8 flex justify-between items-end">
-        <Link to="/home" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4">
+        <Link to="/home" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/5">
           <Icon name="home" />
           <span className="text-[10px] font-medium">Home</span>
         </Link>
-        <Link to="/map" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4">
+        <Link to="/map" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/5">
           <Icon name="map" />
           <span className="text-[10px] font-medium">Map</span>
         </Link>
-        <Link to="/promos" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/4">
-          <Icon name="storefront" />
-          <span className="text-[10px] font-medium">Directory</span>
+        <Link to="/promos" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/5">
+          <Icon name="local_offer" />
+          <span className="text-[10px] font-medium">Promos</span>
         </Link>
-        <Link to="/profile" className="flex flex-col items-center gap-1 text-primary w-1/4">
+        <Link to="/tickets" className="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors w-1/5">
+          <Icon name="confirmation_number" />
+          <span className="text-[10px] font-medium">Tickets</span>
+        </Link>
+        <Link to="/profile" className="flex flex-col items-center gap-1 text-primary w-1/5">
           <Icon name="person" filled />
           <span className="text-[10px] font-bold">Account</span>
         </Link>

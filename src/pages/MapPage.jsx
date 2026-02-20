@@ -348,6 +348,17 @@ export default function MapPage() {
             </p>
           </Link>
           <Link
+            to="/tickets"
+            className="group flex flex-1 flex-col items-center justify-center gap-1"
+          >
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
+              <Icon name="confirmation_number" />
+            </div>
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">
+              Tickets
+            </p>
+          </Link>
+          <Link
             to="/profile"
             className="group flex flex-1 flex-col items-center justify-center gap-1"
           >

@@ -203,19 +203,23 @@ export default function HomePage() {
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-30 flex w-full max-w-[390px] items-end justify-between border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 pb-6 pt-3 backdrop-blur-md">
-        <Link to="/home" className="flex w-1/4 flex-col items-center gap-1 text-primary">
+        <Link to="/home" className="flex w-1/5 flex-col items-center gap-1 text-primary">
           <Icon name="home" filled />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link to="/map" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
+        <Link to="/map" className="flex w-1/5 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="map" />
           <span className="text-[10px] font-medium">Map</span>
         </Link>
-        <Link to="/promos" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
-          <Icon name="storefront" />
-          <span className="text-[10px] font-medium">Directory</span>
+        <Link to="/promos" className="flex w-1/5 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
+          <Icon name="local_offer" />
+          <span className="text-[10px] font-medium">Promos</span>
         </Link>
-        <Link to="/profile" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
+        <Link to="/tickets" className="flex w-1/5 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
+          <Icon name="confirmation_number" />
+          <span className="text-[10px] font-medium">Tickets</span>
+        </Link>
+        <Link to="/profile" className="flex w-1/5 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="person" />
           <span className="text-[10px] font-medium">Account</span>
         </Link>

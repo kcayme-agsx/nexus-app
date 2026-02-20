@@ -195,13 +195,11 @@ export default function PromosPage() {
             <Icon name="map" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
             <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Map</span>
           </Link>
-          <Link to="/promos" className="group -mt-4 flex w-16 flex-col items-center gap-1">
-            <div className="mb-1 flex h-12 w-12 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/40 transition-transform group-active:scale-95">
-              <Icon name="local_offer" className="text-[24px] text-white" />
-            </div>
-            <span className="text-[10px] font-bold text-primary dark:text-white">Promos</span>
+          <Link to="/promos" className="flex w-16 flex-col items-center gap-1">
+            <Icon name="local_offer" filled className="text-[24px] text-primary" />
+            <span className="text-[10px] font-bold text-primary">Promos</span>
           </Link>
-          <Link to="/" className="group flex w-16 flex-col items-center gap-1">
+          <Link to="/tickets" className="group flex w-16 flex-col items-center gap-1">
             <Icon name="confirmation_number" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
             <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Tickets</span>
           </Link>

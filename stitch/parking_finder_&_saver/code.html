@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Parking - SM Supermalls</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#0d7ff2",
+                "background-light": "#f5f7f8",
+                "background-dark": "#101922",
+                "surface-dark": "#1e2936",
+                "surface-light": "#ffffff",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<button class="p-2 -ml-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1 pr-10">Smart Parking</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 py-6 space-y-8 overflow-y-auto pb-24">
+<!-- Section 1: Real-time Availability -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Live Status</h2>
+<span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Updated 1m ago
+                </span>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="flex overflow-x-auto gap-4 pb-2 snap-x snap-mandatory -mx-4 px-4 no-scrollbar">
+<!-- Card 1: Available -->
+<div class="snap-center shrink-0 w-[160px] bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<span class="text-2xl font-bold">P3</span>
+<div class="bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 p-1.5 rounded-full">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-bold tracking-tight">234</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Slots Available</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-auto overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full w-[30%]"></div>
+</div>
+</div>
+<!-- Card 2: Filling Fast -->
+<div class="snap-center shrink-0 w-[160px] bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col gap-3 opacity-80">
+<div class="flex justify-between items-start">
+<span class="text-2xl font-bold">P4</span>
+<div class="bg-amber-500/20 text-amber-600 dark:text-amber-400 p-1.5 rounded-full">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-bold tracking-tight">12</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Filling Fast</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-auto overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full w-[90%]"></div>
+</div>
+</div>
+<!-- Card 3: Full -->
+<div class="snap-center shrink-0 w-[160px] bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col gap-3 opacity-60 grayscale">
+<div class="flex justify-between items-start">
+<span class="text-2xl font-bold">P2</span>
+<div class="bg-red-500/20 text-red-600 dark:text-red-400 p-1.5 rounded-full">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</div>
+</div>
+<div>
+<p class="text-3xl font-bold tracking-tight">FULL</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Waitlist Only</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-auto overflow-hidden">
+<div class="bg-red-500 h-full rounded-full w-[100%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Active Parking Session (Visual Hierarchy: Prominent) -->
+<section class="relative">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-3xl -m-4 z-0"></div>
+<div class="relative z-10 bg-white dark:bg-surface-dark rounded-2xl p-6 border border-primary/20 shadow-lg shadow-primary/5">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2.5 rounded-full text-primary">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight">Your Vehicle</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Parked 2h 15m ago</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Est. Fee</p>
+<p class="text-xl font-bold text-primary">₱110</p>
+</div>
+</div>
+<!-- Location Details Grid -->
+<div class="grid grid-cols-3 gap-3 mb-6">
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Floor</p>
+<p class="text-2xl font-extrabold text-slate-800 dark:text-white">P2</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Zone</p>
+<p class="text-2xl font-extrabold text-slate-800 dark:text-white">B</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Slot</p>
+<p class="text-2xl font-extrabold text-slate-800 dark:text-white">47</p>
+</div>
+</div>
+<!-- Photo Placeholder -->
+<div class="relative w-full h-32 bg-slate-200 dark:bg-slate-700 rounded-xl overflow-hidden mb-6 group cursor-pointer border border-slate-300 dark:border-slate-600">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 dark:opacity-40 transition-transform duration-500 group-hover:scale-105" data-alt="User uploaded photo of parked car in parking garage column 47" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOsdnCJP4EVm-wSrQJy2j6w6jpwrMF479P3klxu4lvZf6421c9sr9TJCh66UE9QkPPPD7qr7P4kRC_b2KnOIOTAD2ZACqjkIu_8GmnBnFcyYHB-Lfvf9XvXHCxLfybk9JSj4-xositeTdtgtwi6dIBXfjOJFfCXv-qwktyoUf2y_TKzaMBShqHPA-7Jd-RjSEJLGC4PzY-NCCFwf-3s5ECgkl-JInMH8P-dppMzheZbggMr_9s-9jOepD9XpKqJqh2wUU8wcskWl6Z');">
+</div>
+<!-- Overlay Content -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/30">
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                            View Photo
+                        </button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined">near_me</span>
+                    Navigate to Car
+                </button>
+</div>
+</section>
+<!-- Section 3: Save New Parking (Secondary Action) -->
+<section class="px-2">
+<div class="bg-surface-dark/5 dark:bg-white/5 rounded-2xl p-6 text-center border border-dashed border-slate-300 dark:border-slate-700">
+<div class="bg-slate-200 dark:bg-slate-700 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">edit_location</span>
+</div>
+<h3 class="text-base font-bold mb-1">Parked somewhere else?</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Update your location to find your car easily later.</p>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white font-bold py-2.5 px-6 rounded-full text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Update Location
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full bg-background-dark border-t border-slate-800 pb-safe pt-2 px-6">
+<div class="flex justify-between items-end pb-4">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:-translate-y-1 transition-transform">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:-translate-y-1 transition-transform">shopping_bag</span>
+<span class="text-[10px] font-medium">Shop</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary relative -top-4" href="#">
+<div class="bg-primary text-white p-3 rounded-full shadow-lg shadow-primary/40 border-4 border-background-dark transform transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-[28px]">local_parking</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Parking</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:-translate-y-1 transition-transform">restaurant</span>
+<span class="text-[10px] font-medium">Dining</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:-translate-y-1 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Style for hiding scrollbar in horizontal scroll but keeping functionality -->
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Safe area for iPhone home indicator */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</body></html>

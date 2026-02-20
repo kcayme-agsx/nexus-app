@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SM Megamall MVP Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d7ff2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col antialiased selection:bg-primary/20">
+<!-- Mobile Container -->
+<div class="mx-auto w-full max-w-md bg-white dark:bg-slate-900 min-h-screen flex flex-col relative shadow-2xl overflow-hidden">
+<!-- Header Section -->
+<header class="pt-14 pb-4 px-6 sticky top-0 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Good Morning</p>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">SM Megamall</h1>
+</div>
+<button class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-200">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-slate-900"></span>
+</button>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm placeholder:text-slate-500 focus:ring-2 focus:ring-primary/50 transition-all shadow-inner" placeholder="Find a store, restaurant, or service..." type="text"/>
+</div>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden pb-24 no-scrollbar space-y-8 pt-6">
+<!-- Welcome & Parking Section -->
+<section class="px-6 space-y-6">
+<div>
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                        Welcome to <br/>
+<span class="text-primary">SM Megamall</span>
+</h2>
+</div>
+<!-- Smart Parking Card -->
+<div class="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 dark:border-slate-700">
+<!-- Background accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 z-0"></div>
+<div class="relative z-10 p-6 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">local_parking</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Smart Parking</h3>
+<p class="text-xs text-slate-500 font-medium">Mega Tower - Basement 2</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold">
+<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                Live
+                            </div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tighter">847</span>
+<span class="text-base font-medium text-slate-500">slots available</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+                            Find My Car
+                        </button>
+</div>
+</div>
+</section>
+<!-- Deals of the Day -->
+<section class="space-y-4">
+<div class="px-6 flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Deals of the Day</h3>
+<a class="text-sm font-semibold text-primary hover:text-primary/80" href="#">View all</a>
+</div>
+<div class="flex overflow-x-auto px-6 gap-4 pb-4 no-scrollbar snap-x snap-mandatory">
+<!-- Deal Card 1 -->
+<div class="snap-center shrink-0 w-[280px] h-[340px] rounded-2xl overflow-hidden relative group cursor-pointer shadow-md">
+<img alt="Fashion model wearing summer collection clothes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Fashion model wearing summer collection clothes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5odBEPoYkHYL6ExkTarwAgXWhNZfJewjoGPmDJPBa1NxZNfmz-PE_AuETL63zo8uxU6Ju2Ihl9lR8nAz8RPWh2bfW600Z0HrLH5yAvY_C4H0ToNeJT9kk5mYkylLpGlGNeqFe1lNotxAL4zDyC-xrAQufyKfs4WVqiYPNeohHkW79k08ACkAAaFVgYuAclXK9iHrZWNudcrqG2-dzp3xm_b7XUG2C4eScNM_7xS6nM3M3-tUkZMr4zNKW1tFeXHNCTsxUgBIEDwnk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            Zara
+                        </div>
+<div class="absolute bottom-0 left-0 w-full p-5">
+<span class="inline-block bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2">LIMITED TIME</span>
+<h4 class="text-2xl font-bold text-white mb-1">50% Off</h4>
+<p class="text-slate-200 text-sm font-medium">Summer Collection 2024</p>
+</div>
+</div>
+<!-- Deal Card 2 -->
+<div class="snap-center shrink-0 w-[280px] h-[340px] rounded-2xl overflow-hidden relative group cursor-pointer shadow-md">
+<img alt="Denim jeans texture close up" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Denim jeans texture close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvmwZ2XMB9JVF6OBqPWfgn-Q89o5JnnF8Z775PAq84s5IwP76umt2WqezvtW-beqzAb9MoFBzfYqnMwOdBGwXkFRTAIXLOskc7yDv-FVZAOJKwiPu1-SbG1mnDcHzisc4ryGukd_EB7cmKKdIi9Ng0yFyzcCAEi4f28zL2bvSZeUAsVjKO549_LvM-Cad5pm-uVBYQHZ3mmHBXIHFDk4NEhEEaRAhUcFskyHnOBEffI5Qd4CpV4sCW5bwKebHyG4h0A83iHwV8n9p-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white text-red-600 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            Uniqlo
+                        </div>
+<div class="absolute bottom-0 left-0 w-full p-5">
+<span class="inline-block bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2">SERVICE</span>
+<h4 class="text-2xl font-bold text-white mb-1">Free Alterations</h4>
+<p class="text-slate-200 text-sm font-medium">On all jeans purchases &gt; ₱1500</p>
+</div>
+</div>
+<!-- Deal Card 3 -->
+<div class="snap-center shrink-0 w-[280px] h-[340px] rounded-2xl overflow-hidden relative group cursor-pointer shadow-md">
+<img alt="Coffee cup on a wooden table" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Coffee cup on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVtetHeswtkDBz2SaDAo10JL2_7wwR0fNVgLB8b0rJjDoOcVBZbQeLvTRfpSNgvvPkLpbNBkCnfwTbz_wyTgNDIC_I7WfHrLtgHE4Mz6YBPpk-gKUBXlHczDtWFNLJ9zVskg_a0L_evJvnFhS3OmpAFgUFv7F42wzMpfwd2BYw6fvR7xs_SvteXkD6f1kS9OKRUeMDC2Bn1gzq-4eHXwiIiFA43LgHnSsoZcvlW6wkFjyAjPEeRC71HO1ZnSDJaG9cjHMc-Puxz0Ie"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white text-green-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            Starbucks
+                        </div>
+<div class="absolute bottom-0 left-0 w-full p-5">
+<span class="inline-block bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2">PROMO</span>
+<h4 class="text-2xl font-bold text-white mb-1">Buy 1 Get 1</h4>
+<p class="text-slate-200 text-sm font-medium">On all frappes every Tuesday</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Categories -->
+<section class="px-6 pb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Explore</h3>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Food</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">checkroom</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Fashion</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">Cinema</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">More</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating AI Button -->
+<button class="absolute bottom-24 right-6 z-20 bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-xl shadow-primary/40 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 group">
+<span class="material-symbols-outlined text-[24px] group-hover:animate-bounce">smart_toy</span>
+<span class="font-bold pr-1">Chat with AI</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 py-3 px-6 flex justify-between items-end fixed bottom-0 w-full max-w-md z-30 pb-6">
+<a class="flex flex-col items-center gap-1 text-primary w-1/4" href="#">
+<span class="material-symbols-outlined filled">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium">Map</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[10px] font-medium">Directory</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors w-1/4" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Account</span>
+</a>
+</nav>
+</div>
+</body></html>

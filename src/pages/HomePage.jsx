@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
+import ThemeToggle from "../components/ThemeToggle";
 
 const deals = [
   {
@@ -40,20 +41,23 @@ const categories = [
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-white">
+    <div className="flex min-h-dvh flex-col bg-white dark:bg-slate-900">
       {/* Header */}
-      <header className="sticky top-0 z-20 border-b border-slate-100 bg-white/90 px-6 pb-4 pt-14 backdrop-blur-md">
+      <header className="sticky top-0 z-20 border-b border-slate-100 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-6 pb-4 pt-14 backdrop-blur-md">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-500">Good Morning</p>
-            <h1 className="text-xl font-bold tracking-tight text-slate-900">
+            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Good Morning</p>
+            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
               SM Megamall
             </h1>
           </div>
-          <button className="relative rounded-full p-2 hover:bg-slate-100 transition-colors">
-            <Icon name="notifications" className="text-slate-700" />
-            <span className="absolute right-2 top-2 h-2 w-2 rounded-full border border-white bg-red-500" />
-          </button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle className="text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" />
+            <button className="relative rounded-full p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <Icon name="notifications" className="text-slate-700 dark:text-slate-300" />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full border border-white dark:border-slate-900 bg-red-500" />
+            </button>
+          </div>
         </div>
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -62,7 +66,7 @@ export default function HomePage() {
           <input
             type="text"
             placeholder="Find a store, restaurant, or service..."
-            className="block w-full rounded-full border-none bg-slate-100 py-3.5 pl-12 pr-4 text-sm shadow-inner placeholder:text-slate-500 focus:ring-2 focus:ring-primary/50"
+            className="block w-full rounded-full border-none bg-slate-100 dark:bg-slate-800 py-3.5 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 shadow-inner placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:ring-2 focus:ring-primary/50"
           />
         </div>
       </header>
@@ -71,13 +75,13 @@ export default function HomePage() {
       <main className="no-scrollbar flex-1 space-y-8 overflow-y-auto overflow-x-hidden pb-24 pt-6">
         {/* Welcome & Parking */}
         <section className="space-y-6 px-6">
-          <h2 className="text-3xl font-extrabold leading-tight text-slate-900">
+          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 dark:text-white">
             Welcome to <br />
             <span className="text-primary">SM Megamall</span>
           </h2>
 
           {/* Smart Parking Card */}
-          <div className="relative overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-surface-dark shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
             <div className="absolute -mr-8 -mt-8 right-0 top-0 z-0 h-32 w-32 rounded-bl-full bg-primary/10" />
             <div className="relative z-10 flex flex-col gap-6 p-6">
               <div className="flex items-start justify-between">
@@ -86,10 +90,10 @@ export default function HomePage() {
                     <Icon name="local_parking" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                       Smart Parking
                     </h3>
-                    <p className="text-xs font-medium text-slate-500">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
                       Mega Tower - Basement 2
                     </p>
                   </div>
@@ -100,10 +104,10 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-extrabold tracking-tighter text-slate-900">
+                <span className="text-5xl font-extrabold tracking-tighter text-slate-900 dark:text-white">
                   847
                 </span>
-                <span className="text-base font-medium text-slate-500">
+                <span className="text-base font-medium text-slate-500 dark:text-slate-400">
                   slots available
                 </span>
               </div>
@@ -121,7 +125,7 @@ export default function HomePage() {
         {/* Deals of the Day */}
         <section className="space-y-4">
           <div className="flex items-center justify-between px-6">
-            <h3 className="text-lg font-bold text-slate-900">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
               Deals of the Day
             </h3>
             <Link
@@ -164,17 +168,17 @@ export default function HomePage() {
 
         {/* Explore Categories */}
         <section className="px-6 pb-6">
-          <h3 className="mb-4 text-lg font-bold text-slate-900">Explore</h3>
+          <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">Explore</h3>
           <div className="grid grid-cols-4 gap-4">
             {categories.map((cat) => (
               <div
                 key={cat.label}
                 className="group flex cursor-pointer flex-col items-center gap-2"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-primary transition-colors group-hover:bg-primary/10">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-surface-dark text-primary transition-colors group-hover:bg-primary/10">
                   <Icon name={cat.icon} />
                 </div>
-                <span className="text-xs font-medium text-slate-600">
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   {cat.label}
                 </span>
               </div>
@@ -196,20 +200,20 @@ export default function HomePage() {
       </Link>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 z-30 flex w-full max-w-[390px] items-end justify-between border-t border-slate-100 bg-white/80 px-6 pb-6 pt-3 backdrop-blur-md">
+      <nav className="fixed bottom-0 z-30 flex w-full max-w-[390px] items-end justify-between border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 pb-6 pt-3 backdrop-blur-md">
         <Link to="/" className="flex w-1/4 flex-col items-center gap-1 text-primary">
           <Icon name="home" filled />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link to="/map" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 transition-colors hover:text-primary">
+        <Link to="/map" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="map" />
           <span className="text-[10px] font-medium">Map</span>
         </Link>
-        <Link to="/promos" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 transition-colors hover:text-primary">
+        <Link to="/promos" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="storefront" />
           <span className="text-[10px] font-medium">Directory</span>
         </Link>
-        <Link to="/parking" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 transition-colors hover:text-primary">
+        <Link to="/parking" className="flex w-1/4 flex-col items-center gap-1 text-slate-400 dark:text-slate-500 transition-colors hover:text-primary">
           <Icon name="person" />
           <span className="text-[10px] font-medium">Account</span>
         </Link>

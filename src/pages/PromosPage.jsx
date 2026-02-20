@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
+import ThemeToggle from "../components/ThemeToggle";
 
 const filters = ["All Deals", "Fashion", "Food & Dining", "Tech", "Entertainment"];
 
@@ -51,25 +52,26 @@ const promos = [
 
 export default function PromosPage() {
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-background-dark text-slate-100">
+    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-white dark:bg-background-dark text-slate-900 dark:text-slate-100">
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-surface-highlight bg-background-dark/90 px-4 py-3 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-slate-200 dark:border-surface-highlight bg-white/90 dark:bg-background-dark/90 px-4 py-3 backdrop-blur-md">
         <div className="flex items-center justify-between">
           <div>
             <p className="mb-0.5 text-xs font-semibold uppercase tracking-wider text-primary">
               SM Megamall
             </p>
-            <h1 className="text-2xl font-bold tracking-tight text-white">
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
               Latest Deals
             </h1>
           </div>
-          <div className="flex items-center gap-3">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-highlight text-white transition-colors hover:bg-slate-700">
+          <div className="flex items-center gap-2">
+            <ThemeToggle className="text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700" />
+            <button className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-surface-highlight text-slate-700 dark:text-white transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
               <Icon name="search" />
             </button>
-            <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-surface-highlight text-white transition-colors hover:bg-slate-700">
+            <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-surface-highlight text-slate-700 dark:text-white transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
               <Icon name="notifications" />
-              <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full border-2 border-surface-highlight bg-red-500" />
+              <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full border-2 border-slate-100 dark:border-surface-highlight bg-red-500" />
             </button>
           </div>
         </div>
@@ -82,7 +84,7 @@ export default function PromosPage() {
               className={`shrink-0 rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                 i === 0
                   ? "bg-primary text-white shadow-lg shadow-primary/25"
-                  : "border border-transparent bg-surface-highlight text-text-secondary hover:border-slate-600 hover:text-white"
+                  : "border border-slate-200 dark:border-transparent bg-slate-100 dark:bg-surface-highlight text-slate-500 dark:text-text-secondary hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-900 dark:hover:text-white"
               }`}
             >
               {filter}
@@ -96,13 +98,13 @@ export default function PromosPage() {
         {promos.map((promo) => (
           <article
             key={promo.title}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-surface-highlight bg-surface-dark shadow-sm transition-all hover:shadow-md"
+            className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark shadow-sm transition-all hover:shadow-md"
           >
             {/* Card Header */}
             <div className="flex items-center justify-between p-4 pb-3">
               <div className="flex items-center gap-3">
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-surface-highlight text-white ${promo.brandBg}`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200 dark:border-surface-highlight text-white ${promo.brandBg}`}
                 >
                   {promo.brandIcon ? (
                     <Icon name={promo.brandIcon} className="text-sm" />
@@ -113,15 +115,15 @@ export default function PromosPage() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold leading-tight text-white">
+                  <h3 className="text-sm font-bold leading-tight text-slate-900 dark:text-white">
                     {promo.brandName || promo.brand}
                   </h3>
-                  <p className="text-xs text-text-secondary">
+                  <p className="text-xs text-slate-500 dark:text-text-secondary">
                     {promo.location}
                   </p>
                 </div>
               </div>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-surface-highlight hover:text-red-500">
+              <button className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-surface-highlight hover:text-red-500">
                 <Icon
                   name="favorite"
                   filled={promo.favorited}
@@ -131,7 +133,7 @@ export default function PromosPage() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-highlight">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-surface-highlight">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url('${promo.image}')` }}
@@ -147,18 +149,18 @@ export default function PromosPage() {
 
             {/* Content */}
             <div className="p-5">
-              <h2 className="mb-2 text-2xl font-extrabold leading-tight text-white">
+              <h2 className="mb-2 text-2xl font-extrabold leading-tight text-slate-900 dark:text-white">
                 {promo.title}
               </h2>
-              <p className="mb-4 line-clamp-2 text-sm text-text-secondary">
+              <p className="mb-4 line-clamp-2 text-sm text-slate-500 dark:text-text-secondary">
                 {promo.description}
               </p>
-              <div className="flex items-center justify-between gap-3 border-t border-surface-highlight/50 pt-2">
+              <div className="flex items-center justify-between gap-3 border-t border-slate-200 dark:border-surface-highlight/50 pt-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
                     Valid Until
                   </span>
-                  <span className="text-sm font-semibold text-slate-200">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                     {promo.validUntil}
                   </span>
                 </div>
@@ -177,29 +179,29 @@ export default function PromosPage() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 z-50 w-full max-w-[390px] border-t border-surface-highlight bg-surface-dark px-6 pb-6 pt-3 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
+      <nav className="fixed bottom-0 z-50 w-full max-w-[390px] border-t border-slate-200 dark:border-surface-highlight bg-white dark:bg-surface-dark px-6 pb-6 pt-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
         <div className="flex items-end justify-between">
           <Link to="/" className="group flex w-16 flex-col items-center gap-1">
-            <Icon name="home" className="text-[24px] text-text-secondary transition-colors group-hover:text-white" />
-            <span className="text-[10px] font-medium text-text-secondary transition-colors group-hover:text-white">Home</span>
+            <Icon name="home" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
+            <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Home</span>
           </Link>
           <Link to="/map" className="group flex w-16 flex-col items-center gap-1">
-            <Icon name="map" className="text-[24px] text-text-secondary transition-colors group-hover:text-white" />
-            <span className="text-[10px] font-medium text-text-secondary transition-colors group-hover:text-white">Map</span>
+            <Icon name="map" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
+            <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Map</span>
           </Link>
           <Link to="/promos" className="group -mt-4 flex w-16 flex-col items-center gap-1">
             <div className="mb-1 flex h-12 w-12 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/40 transition-transform group-active:scale-95">
               <Icon name="local_offer" className="text-[24px] text-white" />
             </div>
-            <span className="text-[10px] font-bold text-white">Promos</span>
+            <span className="text-[10px] font-bold text-primary dark:text-white">Promos</span>
           </Link>
           <Link to="/" className="group flex w-16 flex-col items-center gap-1">
-            <Icon name="confirmation_number" className="text-[24px] text-text-secondary transition-colors group-hover:text-white" />
-            <span className="text-[10px] font-medium text-text-secondary transition-colors group-hover:text-white">Tickets</span>
+            <Icon name="confirmation_number" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
+            <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Tickets</span>
           </Link>
           <Link to="/" className="group flex w-16 flex-col items-center gap-1">
-            <Icon name="person" className="text-[24px] text-text-secondary transition-colors group-hover:text-white" />
-            <span className="text-[10px] font-medium text-text-secondary transition-colors group-hover:text-white">Profile</span>
+            <Icon name="person" className="text-[24px] text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white" />
+            <span className="text-[10px] font-medium text-slate-400 dark:text-text-secondary transition-colors group-hover:text-primary dark:group-hover:text-white">Profile</span>
           </Link>
         </div>
       </nav>

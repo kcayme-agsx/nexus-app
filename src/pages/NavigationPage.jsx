@@ -135,23 +135,23 @@ export default function NavigationPage() {
       </div>
 
       {/* Instruction Sheet */}
-      <div className="relative z-40 -mt-6 flex flex-1 flex-col rounded-t-xl border-t border-white/5 bg-surface-dark shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
+      <div className="relative z-40 -mt-6 flex flex-1 flex-col rounded-t-xl border-t border-slate-200 dark:border-white/5 bg-white dark:bg-surface-dark shadow-[0_-4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.4)]">
         {/* Drag Handle */}
         <div className="flex w-full items-center justify-center pb-1 pt-3">
-          <div className="h-1.5 w-12 rounded-full bg-slate-600" />
+          <div className="h-1.5 w-12 rounded-full bg-slate-300 dark:bg-slate-600" />
         </div>
 
         {/* Route Header */}
-        <div className="border-b border-white/5 px-6 py-4">
+        <div className="border-b border-slate-200 dark:border-white/5 px-6 py-4">
           <div className="flex items-start justify-between">
             <div>
-              <h2 className="mb-1 text-2xl font-bold text-white">
+              <h2 className="mb-1 text-2xl font-bold text-slate-900 dark:text-white">
                 3 min{" "}
-                <span className="text-lg font-normal text-slate-400">
+                <span className="text-lg font-normal text-slate-500 dark:text-slate-400">
                   &bull; 150m
                 </span>
               </h2>
-              <p className="text-sm font-medium text-slate-400">
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 Fastest route to{" "}
                 <span className="text-primary">Uniqlo</span>
               </p>
@@ -171,17 +171,17 @@ export default function NavigationPage() {
             >
               {/* Timeline line */}
               {i < steps.length - 1 && (
-                <div className="absolute bottom-[-16px] left-[29px] top-12 w-0.5 bg-white/10" />
+                <div className="absolute bottom-[-16px] left-[29px] top-12 w-0.5 bg-slate-200 dark:bg-white/10" />
               )}
               <div className="relative z-10 shrink-0">
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-full ${
                     step.active
                       ? "bg-primary shadow-[0_0_20px_rgba(13,127,242,0.5)]"
-                      : "border border-white/10 bg-surface-dark"
+                      : "border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-surface-dark"
                   }`}
                 >
-                  <Icon name={step.icon} className="text-xl text-white" />
+                  <Icon name={step.icon} className={`text-xl ${step.active ? "text-white" : "text-slate-500 dark:text-white"}`} />
                 </div>
               </div>
               <div className="flex-1 pt-1">
@@ -189,8 +189,8 @@ export default function NavigationPage() {
                   <h3
                     className={`leading-tight ${
                       step.active
-                        ? "text-lg font-bold text-white"
-                        : "text-base font-medium text-slate-200"
+                        ? "text-lg font-bold text-slate-900 dark:text-white"
+                        : "text-base font-medium text-slate-700 dark:text-slate-200"
                     }`}
                   >
                     {step.title}
@@ -206,13 +206,13 @@ export default function NavigationPage() {
                   )}
                 </div>
                 {step.subtitle && (
-                  <p className="mt-1 text-sm text-slate-400">
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     {step.subtitle}
                   </p>
                 )}
                 {step.landmark && (
                   <div className="mt-2 flex items-center gap-2">
-                    <div className="flex items-center gap-1 rounded bg-white/10 px-2 py-1 text-xs font-medium text-slate-300">
+                    <div className="flex items-center gap-1 rounded bg-slate-100 dark:bg-white/10 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
                       <Icon name="storefront" className="text-[14px]" />
                       {step.landmark}
                     </div>
@@ -224,7 +224,7 @@ export default function NavigationPage() {
         </div>
 
         {/* Exit Button */}
-        <div className="absolute bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-background-dark via-background-dark to-transparent p-6 pt-4">
+        <div className="absolute bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-white via-white dark:from-background-dark dark:via-background-dark to-transparent p-6 pt-4">
           <Link
             to="/map"
             className="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-[#ef4444] font-bold text-white shadow-lg transition-all hover:bg-red-600 active:scale-[0.98]"

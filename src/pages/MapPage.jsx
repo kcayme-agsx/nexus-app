@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
+import ThemeToggle from "../components/ThemeToggle";
 
 const floors = ["5", "4", "3", "2", "G"];
 const activeFloor = "3";
@@ -91,18 +92,19 @@ export default function MapPage() {
         {/* Search Bar */}
         <div className="absolute left-0 right-0 top-0 z-30 bg-gradient-to-b from-background-dark/90 to-transparent px-4 pb-2 pt-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 flex-1 items-center rounded-full border border-slate-700/50 bg-[#22303c]/90 px-4 shadow-lg backdrop-blur-md">
-              <Icon name="search" className="mr-2 text-slate-400" />
+            <div className="flex h-12 flex-1 items-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 px-4 shadow-lg backdrop-blur-md">
+              <Icon name="search" className="mr-2 text-slate-500 dark:text-slate-400" />
               <input
                 type="text"
                 placeholder="Search stores, dining, or facilities..."
-                className="w-full border-none bg-transparent text-sm font-medium text-slate-200 placeholder-slate-500 focus:ring-0"
+                className="w-full border-none bg-transparent text-sm font-medium text-slate-900 dark:text-slate-200 placeholder-slate-500 focus:ring-0"
               />
-              <button className="rounded-full p-1 text-slate-400 hover:bg-slate-700/50">
+              <button className="rounded-full p-1 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50">
                 <Icon name="mic" className="text-[20px]" />
               </button>
             </div>
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-700/50 bg-[#22303c]/90 text-slate-400 shadow-lg backdrop-blur-md transition-colors hover:bg-slate-700/50 hover:text-white">
+            <ThemeToggle className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 text-slate-600 dark:text-slate-400 shadow-lg backdrop-blur-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-700/50" />
+            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/90 dark:bg-[#22303c]/90 text-slate-600 dark:text-slate-400 shadow-lg backdrop-blur-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-white">
               <Icon name="tune" />
             </button>
           </div>
@@ -110,14 +112,14 @@ export default function MapPage() {
 
         {/* Floor Selector */}
         <div className="absolute right-4 top-1/2 z-30 flex -translate-y-1/2 flex-col gap-2">
-          <div className="flex flex-col gap-1 rounded-full border border-slate-700/50 bg-[#22303c]/80 p-1.5 shadow-lg backdrop-blur-md">
+          <div className="flex flex-col gap-1 rounded-full border border-slate-200 dark:border-slate-700/50 bg-white/80 dark:bg-[#22303c]/80 p-1.5 shadow-lg backdrop-blur-md">
             {floors.map((floor) => (
               <button
                 key={floor}
                 className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-colors ${
                   floor === activeFloor
                     ? "bg-primary text-white shadow-md shadow-blue-500/30"
-                    : "text-slate-400 hover:bg-slate-700/50"
+                    : "text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50"
                 }`}
               >
                 {floor}
@@ -143,7 +145,7 @@ export default function MapPage() {
 
         {/* Store Info Card */}
         <div className="absolute bottom-4 left-4 right-4 z-40">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-700/50 bg-[#1e2936] p-5 shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-[#1e2936] p-5 shadow-2xl">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
             <div className="flex items-start justify-between">
               <div className="flex gap-4">
@@ -155,10 +157,10 @@ export default function MapPage() {
                   </span>
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold leading-tight text-white">
+                  <h2 className="text-xl font-bold leading-tight text-slate-900 dark:text-white">
                     Uniqlo
                   </h2>
-                  <p className="mt-1 text-sm text-slate-400">
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     Level 3, Mega Fashion Hall
                   </p>
                   <div className="mt-2 flex items-center gap-2">
@@ -167,13 +169,13 @@ export default function MapPage() {
                       Open
                     </span>
                     <span className="text-xs text-slate-500">&bull;</span>
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
                       Closes at 10:00 PM
                     </span>
                   </div>
                 </div>
               </div>
-              <button className="p-1 text-slate-400 hover:text-white">
+              <button className="p-1 text-slate-400 hover:text-slate-900 dark:hover:text-white">
                 <Icon name="close" />
               </button>
             </div>
@@ -185,10 +187,10 @@ export default function MapPage() {
                 <Icon name="directions" className="text-[20px]" />
                 Get Directions
               </Link>
-              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white">
+              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white">
                 <Icon name="share" className="text-[20px]" />
               </button>
-              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white">
+              <button className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white">
                 <Icon name="favorite" className="text-[20px]" />
               </button>
             </div>
@@ -197,38 +199,38 @@ export default function MapPage() {
       </main>
 
       {/* Bottom Navigation */}
-      <div className="z-50 border-t border-[#223649] bg-[#182634] px-4 pb-6 pt-2">
+      <div className="z-50 border-t border-slate-200 dark:border-[#223649] bg-white dark:bg-[#182634] px-4 pb-6 pt-2">
         <div className="mx-auto flex max-w-md items-center justify-between">
           <Link to="/" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-[#90adcb] transition-colors group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="home" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-[#90adcb] transition-colors group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               Home
             </p>
           </Link>
           <Link to="/map" className="group flex flex-1 flex-col items-center justify-center gap-1">
             <div className="relative flex h-8 items-center justify-center text-primary">
               <Icon name="map" filled />
-              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full border-2 border-[#182634] bg-red-500" />
+              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full border-2 border-white dark:border-[#182634] bg-red-500" />
             </div>
             <p className="text-[10px] font-medium leading-normal tracking-wide text-primary">
               Map
             </p>
           </Link>
           <Link to="/promos" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-[#90adcb] transition-colors group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="local_offer" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-[#90adcb] transition-colors group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               Promos
             </p>
           </Link>
           <Link to="/" className="group flex flex-1 flex-col items-center justify-center gap-1">
-            <div className="flex h-8 items-center justify-center text-[#90adcb] transition-colors group-hover:text-white">
+            <div className="flex h-8 items-center justify-center text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               <Icon name="person" />
             </div>
-            <p className="text-[10px] font-medium leading-normal tracking-wide text-[#90adcb] transition-colors group-hover:text-white">
+            <p className="text-[10px] font-medium leading-normal tracking-wide text-slate-400 dark:text-[#90adcb] transition-colors group-hover:text-primary dark:group-hover:text-white">
               Profile
             </p>
           </Link>

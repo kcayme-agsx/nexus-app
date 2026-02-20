@@ -188,16 +188,18 @@ export default function HomePage() {
       </main>
 
       {/* Floating AI Button */}
-      <Link
-        to="/chat"
-        className="group fixed bottom-24 right-6 z-20 flex items-center gap-2 rounded-full bg-primary p-4 text-white shadow-xl shadow-primary/40 transition-transform hover:scale-105 hover:bg-primary/90 active:scale-95"
-      >
-        <Icon
-          name="smart_toy"
-          className="text-[24px] group-hover:animate-bounce"
-        />
-        <span className="pr-1 font-bold">Chat with AI</span>
-      </Link>
+      <div className="pointer-events-none fixed bottom-24 z-20 flex w-full max-w-[390px] justify-end px-6">
+        <Link
+          to="/chat"
+          className="pointer-events-auto group flex items-center gap-2 rounded-full bg-primary p-4 text-white shadow-xl shadow-primary/40 transition-transform hover:scale-105 hover:bg-primary/90 active:scale-95"
+        >
+          <Icon
+            name="smart_toy"
+            className="text-[24px] group-hover:animate-bounce"
+          />
+          <span className="pr-1 font-bold">Chat with AI</span>
+        </Link>
+      </div>
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 z-30 flex w-full max-w-[390px] items-end justify-between border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 pb-6 pt-3 backdrop-blur-md">
